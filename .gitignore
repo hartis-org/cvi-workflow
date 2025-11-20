@@ -11,3 +11,9 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .virtual_documents/
+
+.DS_Store
+steps/.DS_Store
+output_data/.DS_Store
+input_data/.DS_Store
+config/.DS_Store
