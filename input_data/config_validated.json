@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "description": "Configuration for Coastal Vulnerability Index (CVI) scoring. Each parameter is ranked 1\u20135. The total CVI is calculated as sqrt((V1 * V2 * ... * Vn) / n).",
+    "version": "2.0.0",
+    "date_created": "2025-09-18",
+    "last_updated": "2025-09-18",
+    "author": "HARTIS Integrated Nautical Services",
+    "method": "USGS CVI method with optional quintile-based classification (Theocharidis et al., 2024, Remote Sensing).",
+    "formula": {
+      "expression": "sqrt((V1 * V2 * ... * Vn) / n)",
+      "type": "product_root",
+      "variables": [
+        "land_cover",
+        "slope",
+        "erosion",
+        "elevation"
+      ]
+    },
+    "default_palette": {
+      "1": {
+        "color": "green",
+        "color_hex": "#008000"
+      },
+      "2": {
+        "color": "lightgreen",
+        "color_hex": "#90EE90"
+      },
+      "3": {
+        "color": "yellow",
+        "color_hex": "#FFFF00"
+      },
+      "4": {
+        "color": "orange",
+        "color_hex": "#FFA500"
+      },
+      "5": {
+        "color": "red",
+        "color_hex": "#FF0000"
+      }
+    },
+    "parameters": [
+      {
+        "key": "land_cover",
+        "order": "a",
+        "label": "Coastal land cover",
+        "type": "categorical"
+      },
+      {
+        "key": "slope",
+        "order": "b",
+        "label": "Coastal slope",
+        "unit": "%",
+        "type": "numeric"
+      },
+      {
+        "key": "erosion",
+        "order": "c",
+        "label": "Rate of coastline erosion",
+        "unit": "m/year",
+        "type": "numeric"
+      },
+      {
+        "key": "elevation",
+        "order": "f",
+        "label": "Coastal elevation",
+        "unit": "m",
+        "type": "numeric"
+      },
+      {
+        "key": "total_cvi",
+        "order": "i",
+        "label": "Total CVI scoring",
+        "type": "numeric"
+      }
+    ],
+    "references": [
+      "Thieler, E.R. & Hammar-Klose, E.S. (1999) USGS OFR 99\u2013593",
+      "Theocharidis et al. (2024) Remote Sensing 16(22):3688"
+    ]
+  },
+  "land_cover": {
+    "classes": {
+      "1": {
+        "label": "Tree cover",
+        "codes": [
+          "10"
+        ],
+        "color": "darkgreen",
+        "color_hex": "#006400"
+      },
+      "2": {
+        "label": "Shrubland / Bare sparse veg.",
+        "codes": [
+          "20",
+          "60"
+        ],
+        "color": "goldenrod",
+        "color_hex": "#DAA520"
+      },
+      "3": {
+        "label": "Grassland / Cropland",
+        "codes": [
+          "30",
+          "40"
+        ],
+        "color": "khaki",
+        "color_hex": "#F0E68C"
+      },
+      "4": {
+        "label": "Herbaceous wetland",
+        "codes": [
+          "90"
+        ],
+        "color": "teal",
+        "color_hex": "#008080"
+      },
+      "5": {
+        "label": "Built-up",
+        "codes": [
+          "50"
+        ],
+        "color": "red",
+        "color_hex": "#FF0000"
+      }
+    }
+  },
+  "slope": {
+    "classes": {
+      "1": {
+        "label": "Very Low",
+        "min": 12,
+        "max": null,
+        "palette": 1
+      },
+      "2": {
+        "label": "Low",
+        "min": 8,
+        "max": 12,
+        "palette": 2
+      },
+      "3": {
+        "label": "Moderate",
+        "min": 4,
+        "max": 8,
+        "palette": 3
+      },
+      "4": {
+        "label": "High",
+        "min": 2,
+        "max": 4,
+        "palette": 4
+      },
+      "5": {
+        "label": "Very High",
+        "min": null,
+        "max": 2,
+        "palette": 5
+      }
+    }
+  },
+  "erosion": {
+    "classes": {
+      "1": {
+        "label": "Very Low",
+        "min": 2,
+        "max": null,
+        "palette": 1
+      },
+      "2": {
+        "label": "Low",
+        "min": 1,
+        "max": 2,
+        "palette": 2
+      },
+      "3": {
+        "label": "Moderate",
+        "min": -1,
+        "max": 1,
+        "palette": 3
+      },
+      "4": {
+        "label": "High",
+        "min": -2,
+        "max": -1.1,
+        "palette": 4
+      },
+      "5": {
+        "label": "Very High",
+        "min": null,
+        "max": -2,
+        "palette": 5
+      }
+    }
+  },
+  "elevation": {
+    "classes": {
+      "1": {
+        "label": "Very Low",
+        "min": 20,
+        "max": null,
+        "palette": 1
+      },
+      "2": {
+        "label": "Low",
+        "min": 10,
+        "max": 20,
+        "palette": 2
+      },
+      "3": {
+        "label": "Moderate",
+        "min": 5,
+        "max": 10,
+        "palette": 3
+      },
+      "4": {
+        "label": "High",
+        "min": 2,
+        "max": 5,
+        "palette": 4
+      },
+      "5": {
+        "label": "Very High",
+        "min": 0,
+        "max": 2,
+        "palette": 5
+      }
+    }
+  },
+  "total_cvi": {
+    "formula": {
+      "expression": "sqrt((V1 * V2 * ... * Vn) / n)",
+      "type": "product_root"
+    },
+    "fixed": {
+      "1": {
+        "label": "Very Low Vulnerability",
+        "min": 0,
+        "max": 2.5,
+        "palette": 1
+      },
+      "2": {
+        "label": "Low Vulnerability",
+        "min": 2.5,
+        "max": 5.0,
+        "palette": 2
+      },
+      "3": {
+        "label": "Moderate Vulnerability",
+        "min": 5.0,
+        "max": 7.5,
+        "palette": 3
+      },
+      "4": {
+        "label": "High Vulnerability",
+        "min": 7.5,
+        "max": 10.0,
+        "palette": 4
+      },
+      "5": {
+        "label": "Very High Vulnerability",
+        "min": 10.0,
+        "max": null,
+        "palette": 5
+      }
+    },
+    "quintile": {
+      "formula": "Bins are computed as quintiles of observed CVI values (0th, 20th, 40th, 60th, 80th, 100th percentiles)",
+      "dynamic": false,
+      "1": {
+        "label": "Very Low Vulnerability",
+        "min": 3.2,
+        "max": 4.64,
+        "palette": 1,
+        "range": "3.2 \u2013 4.64"
+      },
+      "2": {
+        "label": "Low Vulnerability",
+        "min": 4.64,
+        "max": 6.08,
+        "palette": 2,
+        "range": "4.64 \u2013 6.08"
+      },
+      "3": {
+        "label": "Moderate Vulnerability",
+        "min": 6.08,
+        "max": 7.34,
+        "palette": 3,
+        "range": "6.08 \u2013 7.34"
+      },
+      "4": {
+        "label": "High Vulnerability",
+        "min": 7.34,
+        "max": 8.42,
+        "palette": 4,
+        "range": "7.34 \u2013 8.42"
+      },
+      "5": {
+        "label": "Very High Vulnerability",
+        "min": 8.42,
+        "max": 9.5,
+        "palette": 5,
+        "range": "8.42 \u2013 9.5"
+      }
+    }
+  },
+  "weights": {
+    "method": "equal",
+    "modes": {
+      "equal": {
+        "description": "Classic USGS/NOAA CVI method with equal weights",
+        "values": {
+          "land_cover": 1,
+          "slope": 1,
+          "erosion": 1,
+          "elevation": 1
+        }
+      }
+    }
+  }
+}

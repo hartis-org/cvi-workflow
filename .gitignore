@@ -1,0 +1,13 @@
+# Secrets
+.env
+
+# Outputs and Temp files
+cwl_tmp/
+archive/
+*.log
+
+# Python & Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.virtual_documents/

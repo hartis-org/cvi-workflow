@@ -1,0 +1,13 @@
+config_json:
+  class: File
+  path: config/cvi_scoring_simple.json
+
+med_aois_csv:
+  class: File
+  path: input_data/med_coastal_aois.csv
+
+tokens_env:
+  class: File
+  path: config/tokens.env
+
+output_dir: output_data
