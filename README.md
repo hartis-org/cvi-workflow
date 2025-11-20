@@ -367,6 +367,6 @@ m
 
 ---
 
-**Author:** [HARTIS Integrated Nautical Services PC](https:www.hartis.org)  
+**Author:** [HARTIS Integrated Nautical Services PC](https://www.hartis.org)  
 **Repository:** [github.com/hartis-org/cvi-workflow](https://github.com/hartis-org/cvi-workflow)  
 **Initiative:** [OGC Open Science Persistent Demonstrator](https://www.ogc.org/initiatives/open-science/)
