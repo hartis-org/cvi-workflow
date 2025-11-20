@@ -9,9 +9,8 @@ An automated, reproducible workflow for calculating the **Coastal Vulnerability 
 
 The workflow is implemented in **Common Workflow Language (CWL)** and runs inside a **Docker container**, ensuring it can be executed anywhere—from a local laptop to a High-Performance Computing (HPC) cluster or JupyterHub.
 
----
 
-## 🏆 OGC Open Science Persistent Demonstrator (OSPD)
+## OGC Open Science Persistent Demonstrator (OSPD)
 
 This workflow is developed as a contribution to the **[OGC Open Science Persistent Demonstrator (OSPD) Pilot](https://www.ogc.org/initiatives/open-science/)**.
 
@@ -20,9 +19,8 @@ It demonstrates a **reproducible, cloud-agnostic Earth Science workflow** by adh
 *   **Portability:** Uses **Docker/OCI Containers** to guarantee the exact same environment on a local laptop, JupyterHub, or HPC.
 *   **Open Science:** All inputs, code, and configuration are open and versioned, allowing full verification of the scientific results.
 
----
 
-## 🌍 Scientific Overview
+## Scientific Overview
 
 The CVI assesses the susceptibility of a coastline to hazards like erosion and inundation. This workflow automates:
 
@@ -37,9 +35,7 @@ The CVI assesses the susceptibility of a coastline to hazards like erosion and i
 5.  **Final Index:** Computes the final CVI score (`sqrt(product/n)`).
 
 
----
-
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 cvi-workflow/
@@ -61,9 +57,8 @@ cvi-workflow/
 └── README.md            # This file
 ```
 
----
 
-## ⚙️ Prerequisites
+## Prerequisites
 
 ### 1. Credentials
 You need access to the **Copernicus Dataspace Ecosystem (CDSE)** to fetch elevation data.
@@ -84,7 +79,7 @@ pip install cwltool
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 This workflow uses a Docker image hosted at `ghcr.io/hartis-org/cvi-workflow:latest`.
 
@@ -124,9 +119,8 @@ If you are in a restricted environment (like JupyterHub) where you cannot run st
       job_cvi.yaml
     ```
 
----
 
-## 📊 Outputs
+## Outputs
 
 All results are saved to the `output_data/` directory defined in `job_cvi.yaml`.
 
@@ -140,9 +134,8 @@ All results are saved to the `output_data/` directory defined in `job_cvi.yaml`.
 | `transects_with_land_cover.geojson`| Transects with land cover classes. |
 | **`transects_with_cvi_equal.geojson`** | **Final Result:** Contains the calculated CVI score and traffic-light risk colors. |
 
----
 
-## 🛠️ Development
+## Development
 
 ### Updating the Docker Image
 The Docker image is built automatically via **GitHub Actions** whenever you push changes to `main`.
@@ -155,9 +148,10 @@ The Docker image is built automatically via **GitHub Actions** whenever you push
 ### Modifying Scoring Logic
 To change how risk categories are defined (e.g., changing "High Risk" slope from <2% to <3%), edit **`config/cvi_scoring_simple.json`**. The workflow reads this file dynamically—no code changes required.
 
----
 
-## 🗺️ Visualization
+## Visualization
+
+[View the Interactive GeoJSON on GitHub](output_data/transects_with_cvi_equal.geojson)
 
 The output GeoJSON files contain pre-calculated color codes defined in the config. You can verify the results using Python/Folium:
 
@@ -313,10 +307,10 @@ for layer in layers_info:
         ).add_to(fg)
         
         fg.add_to(m)
-        print(f"✅ Added layer: {layer['name']}")
+        print(f"Added layer: {layer['name']}")
         
     except Exception as e:
-        print(f"❌ Could not load {layer['file']}: {e}")
+        print(f"Could not load {layer['file']}: {e}")
 
 # ==========================================
 # 6. Add Legend
