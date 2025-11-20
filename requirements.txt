@@ -1,13 +1,10 @@
 boto3
 python-dotenv
-folium
 geopandas
-numpy
 pandas
 pyproj
 rasterio
 requests
 rioxarray
 shapely
-scikit-learn
 xarray
