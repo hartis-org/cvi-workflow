@@ -5,8 +5,8 @@ FROM ghcr.io/osgeo/gdal:ubuntu-small-latest
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# 1. Install system dependencies AND Build Tools
-# 'build-essential' and 'python3-dev' are required to compile libraries like rasterio/shapely
+# 1. Install compilers and system dependencies
+# We need python3-pip and build tools
 RUN apt-get update && apt-get install -y \
     python3-pip \
     build-essential \
@@ -20,6 +20,6 @@ WORKDIR /app
 COPY requirements.txt .
 
 # 2. Install Python libraries
-# We upgrade pip, setuptools, and wheel first to avoid build errors
-RUN pip3 install --break-system-packages --no-cache-dir --upgrade pip setuptools wheel && \
-    pip3 install --break-system-packages --no-cache-dir -r requirements.txt
+# FIX: We removed the '--upgrade pip setuptools wheel' command.
+# The system versions are recent enough, and upgrading them causes conflicts.
+RUN pip3 install --break-system-packages --no-cache-dir -r requirements.txt
