@@ -5,10 +5,12 @@ FROM ghcr.io/osgeo/gdal:ubuntu-small-latest
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# 1. Install system dependencies
-# We upgrade pip to ensure we get the latest compatible wheels
+# 1. Install system dependencies AND Build Tools
+# 'build-essential' and 'python3-dev' are required to compile libraries like rasterio/shapely
 RUN apt-get update && apt-get install -y \
     python3-pip \
+    build-essential \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
@@ -18,6 +20,6 @@ WORKDIR /app
 COPY requirements.txt .
 
 # 2. Install Python libraries
-# CRITICAL CHANGE: Added '--break-system-packages' to bypass Ubuntu restrictions
-RUN pip3 install --break-system-packages --no-cache-dir --upgrade pip && \
+# We upgrade pip, setuptools, and wheel first to avoid build errors
+RUN pip3 install --break-system-packages --no-cache-dir --upgrade pip setuptools wheel && \
     pip3 install --break-system-packages --no-cache-dir -r requirements.txt
