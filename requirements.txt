@@ -6,5 +6,4 @@ pyproj
 rasterio
 requests
 rioxarray
-shapely
 xarray
