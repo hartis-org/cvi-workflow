@@ -48,12 +48,6 @@ $graph:
         label: Tokens STAC item URL
         doc: URL of the STAC item containing the authentication tokens file
         default: "https://eocatalog.p2.csgroup.space/collections/cvi-workflow-resources/items/cvi-authentication-template"
-      
-      output_dir:
-        type: string
-        label: Output directory
-        doc: Directory path for output files
-        default: "output_data"
     
     outputs:
       validated_config:
@@ -135,7 +129,7 @@ $graph:
           config_json:
             source: node_eodag_download_config/data_output_dir
             valueFrom: $(self.listing.filter(function(f) { return f.basename.match(/.*\.json$/i); })[0])
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [config_validated]
       
       extract_coastline:
@@ -144,14 +138,14 @@ $graph:
           med_aois_csv:
             source: node_eodag_download_aois/data_output_dir
             valueFrom: $(self.listing.filter(function(f) { return f.basename.match(/.*\.csv$/i); })[0])
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [coastline_gpkg]
       
       generate_transects:
         run: "#generate-transects-tool"
         in:
           coastline_gpkg: extract_coastline/coastline_gpkg
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [transects_geojson]
       
       compute_landcover:
@@ -163,7 +157,7 @@ $graph:
             source: node_eodag_download_tokens/data_output_dir
             valueFrom: $(self.listing.filter(function(f) { return f.basename.match(/.*\.env$/i); })[0])
           config_json: setup_env/config_validated
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [result]
       
       compute_slope:
@@ -175,7 +169,7 @@ $graph:
             source: node_eodag_download_tokens/data_output_dir
             valueFrom: $(self.listing.filter(function(f) { return f.basename.match(/.*\.env$/i); })[0])
           config_json: setup_env/config_validated
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [result]
       
       compute_erosion:
@@ -187,7 +181,7 @@ $graph:
             source: node_eodag_download_tokens/data_output_dir
             valueFrom: $(self.listing.filter(function(f) { return f.basename.match(/.*\.env$/i); })[0])
           config_json: setup_env/config_validated
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [result]
       
       compute_elevation:
@@ -199,7 +193,7 @@ $graph:
             source: node_eodag_download_tokens/data_output_dir
             valueFrom: $(self.listing.filter(function(f) { return f.basename.match(/.*\.env$/i); })[0])
           config_json: setup_env/config_validated
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [result]
       
       compute_cvi:
@@ -210,7 +204,7 @@ $graph:
           transects_erosion: compute_erosion/result
           transects_elevation: compute_elevation/result
           config_json: setup_env/config_validated
-          output_dir: output_dir
+          output_dir: { default: "output_data" }
         out: [out_geojson]
   
   # CommandLineTool definitions
