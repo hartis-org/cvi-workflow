@@ -155,7 +155,7 @@ $graph:
         label: Compute Landcover
         run: "#compute-parameter-tool"
         in:
-          script: { default: { class: File, location: steps/compute_landcover.py } }
+          script: { default: "/app/steps/compute_landcover.py" }
           transects_geojson: generate_transects/transects_geojson
           tokens_env:
             source: node_eodag_download_tokens/data_output_dir
@@ -168,7 +168,7 @@ $graph:
         label: Compute Slope
         run: "#compute-parameter-tool"
         in:
-          script: { default: { class: File, location: steps/compute_slope.py } }
+          script: { default: "/app/steps/compute_slope.py" }
           transects_geojson: generate_transects/transects_geojson
           tokens_env:
             source: node_eodag_download_tokens/data_output_dir
@@ -181,7 +181,7 @@ $graph:
         label: Compute Erosion
         run: "#compute-parameter-tool"
         in:
-          script: { default: { class: File, location: steps/compute_erosion.py } }
+          script: { default: "/app/steps/compute_erosion.py" }
           transects_geojson: generate_transects/transects_geojson
           tokens_env:
             source: node_eodag_download_tokens/data_output_dir
@@ -194,7 +194,7 @@ $graph:
         label: Compute Elevation
         run: "#compute-parameter-tool"
         in:
-          script: { default: { class: File, location: steps/compute_elevation.py } }
+          script: { default: "/app/steps/compute_elevation.py" }
           transects_geojson: generate_transects/transects_geojson
           tokens_env:
             source: node_eodag_download_tokens/data_output_dir
@@ -221,7 +221,7 @@ $graph:
     label: Setup Environment
     doc: Validates configuration and initializes the working environment
     
-    baseCommand: [python3, setup_env.py]
+    baseCommand: [python3, /app/steps/setup_env.py]
     
     hints:
       DockerRequirement: &docker_image
@@ -232,15 +232,9 @@ $graph:
       InitialWorkDirRequirement:
         listing:
           - $(inputs.config_json)
-          - { entry: $(inputs.script), entryname: setup_env.py }
           - { entry: "$({class: 'Directory', listing: []})", entryname: $(inputs.output_dir), writable: true }
     
     inputs:
-      script:
-        type: File
-        default: { class: File, location: steps/setup_env.py }
-        doc: Python script for environment setup
-      
       config_json:
         type: File
         inputBinding:
@@ -265,7 +259,7 @@ $graph:
     label: Extract Coastline
     doc: Extracts coastline geometry from Mediterranean AOIs
     
-    baseCommand: [python3, extract_coastline.py]
+    baseCommand: [python3, /app/steps/extract_coastline.py]
     
     hints:
       DockerRequirement: *docker_image
@@ -274,16 +268,10 @@ $graph:
       InlineJavascriptRequirement: {}
       InitialWorkDirRequirement:
         listing:
-          - { entry: $(inputs.script), entryname: extract_coastline.py }
           - $(inputs.med_aois_csv)
           - { entry: "$({class: 'Directory', listing: []})", entryname: $(inputs.output_dir), writable: true }
     
     inputs:
-      script:
-        type: File
-        default: { class: File, location: steps/extract_coastline.py }
-        doc: Python script for coastline extraction
-      
       med_aois_csv:
         type: File
         inputBinding:
@@ -308,7 +296,7 @@ $graph:
     label: Generate Transects
     doc: Generates perpendicular transects along the coastline
     
-    baseCommand: [python3, generate_transects.py]
+    baseCommand: [python3, /app/steps/generate_transects.py]
     
     hints:
       DockerRequirement: *docker_image
@@ -318,15 +306,9 @@ $graph:
       InitialWorkDirRequirement:
         listing:
           - $(inputs.coastline_gpkg)
-          - { entry: $(inputs.script), entryname: generate_transects.py }
           - { entry: "$({class: 'Directory', listing: []})", entryname: $(inputs.output_dir), writable: true }
     
     inputs:
-      script:
-        type: File
-        default: { class: File, location: steps/generate_transects.py }
-        doc: Python script for transect generation
-      
       coastline_gpkg:
         type: File
         inputBinding:
@@ -363,17 +345,16 @@ $graph:
           - entry: $(inputs.transects_geojson)
           - entry: $(inputs.tokens_env)
           - entry: $(inputs.config_json)
-          - entry: $(inputs.script)
           - entry: "$({class: 'Directory', listing: []})"
             entryname: $(inputs.output_dir)
             writable: true
     
     inputs:
       script:
-        type: File
+        type: string
         inputBinding:
           position: 0
-        doc: Python script for parameter computation
+        doc: Python script path for parameter computation
       
       transects_geojson:
         type: File
@@ -411,7 +392,7 @@ $graph:
     label: Compute CVI
     doc: Computes final Coastal Vulnerability Index from all parameters
     
-    baseCommand: [python3, compute_cvi.py]
+    baseCommand: [python3, /app/steps/compute_cvi.py]
     
     hints:
       DockerRequirement: *docker_image
@@ -425,15 +406,9 @@ $graph:
           - $(inputs.transects_erosion)
           - $(inputs.transects_elevation)
           - $(inputs.config_json)
-          - { entry: $(inputs.script), entryname: compute_cvi.py }
           - { entry: "$({class: 'Directory', listing: []})", entryname: $(inputs.output_dir), writable: true }
     
     inputs:
-      script:
-        type: File
-        default: { class: File, location: steps/compute_cvi.py }
-        doc: Python script for CVI computation
-      
       transects_landcover:
         type: File
         inputBinding:

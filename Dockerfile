@@ -22,3 +22,6 @@ COPY requirements.txt .
 # FIX: Added '--ignore-installed'.
 # This forces pip to overwrite system packages (like numpy) instead of failing to uninstall them.
 RUN pip3 install --break-system-packages --no-cache-dir --ignore-installed -r requirements.txt
+
+# Copy the workflow steps
+COPY steps/ /app/steps/
