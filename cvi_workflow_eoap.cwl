@@ -124,6 +124,7 @@ $graph:
         out: [data_output_dir]
       
       setup_env:
+        label: Setup Environment
         run: "#setup-env-tool"
         in:
           config_json:
@@ -133,6 +134,7 @@ $graph:
         out: [config_validated]
       
       extract_coastline:
+        label: Extract Coastline
         run: "#extract-coastline-tool"
         in:
           med_aois_csv:
@@ -142,6 +144,7 @@ $graph:
         out: [coastline_gpkg]
       
       generate_transects:
+        label: Generate Transects
         run: "#generate-transects-tool"
         in:
           coastline_gpkg: extract_coastline/coastline_gpkg
@@ -149,6 +152,7 @@ $graph:
         out: [transects_geojson]
       
       compute_landcover:
+        label: Compute Landcover
         run: "#compute-parameter-tool"
         in:
           script: { default: { class: File, location: steps/compute_landcover.py } }
@@ -161,6 +165,7 @@ $graph:
         out: [result]
       
       compute_slope:
+        label: Compute Slope
         run: "#compute-parameter-tool"
         in:
           script: { default: { class: File, location: steps/compute_slope.py } }
@@ -173,6 +178,7 @@ $graph:
         out: [result]
       
       compute_erosion:
+        label: Compute Erosion
         run: "#compute-parameter-tool"
         in:
           script: { default: { class: File, location: steps/compute_erosion.py } }
@@ -185,6 +191,7 @@ $graph:
         out: [result]
       
       compute_elevation:
+        label: Compute Elevation
         run: "#compute-parameter-tool"
         in:
           script: { default: { class: File, location: steps/compute_elevation.py } }
@@ -197,6 +204,7 @@ $graph:
         out: [result]
       
       compute_cvi:
+        label: Compute CVI Index
         run: "#compute-cvi-tool"
         in:
           transects_landcover: compute_landcover/result
