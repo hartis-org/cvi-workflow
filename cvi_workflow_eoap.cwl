@@ -462,7 +462,7 @@ $graph:
     hints:
       DockerRequirement:
         dockerPull: |-
-          643vlk6z.gra7.container-registry.ovh.net/space_applications/eodag:3.6.0
+          ghcr.io/cs-si/eodag:3.10.0
     
     requirements:
       InlineJavascriptRequirement: {}
