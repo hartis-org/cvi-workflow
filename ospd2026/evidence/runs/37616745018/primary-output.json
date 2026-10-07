@@ -1,0 +1,90 @@
+{
+    "coastline_gpkg": {
+        "location": "../data/04/04fcfd9d12ef50311245db7d9411eb8d18b96fd9",
+        "basename": "coastline.gpkg",
+        "nameroot": "coastline",
+        "nameext": ".gpkg",
+        "class": "File",
+        "checksum": "sha1$04fcfd9d12ef50311245db7d9411eb8d18b96fd9",
+        "size": 360448,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:08bfca82-5faf-42d3-8163-07f06f3b6318"
+    },
+    "cvi_geojson": {
+        "location": "../data/77/77afb37fe51d7491f8ca8390ae47b7324fb6d48d",
+        "basename": "transects_with_cvi_equal.geojson",
+        "nameroot": "transects_with_cvi_equal",
+        "nameext": ".geojson",
+        "class": "File",
+        "checksum": "sha1$77afb37fe51d7491f8ca8390ae47b7324fb6d48d",
+        "size": 125768,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:b6242675-c103-484f-be80-58b288d56f2f"
+    },
+    "transects_elevation": {
+        "location": "../data/03/031452d5940b95da2f62096c2c63ecb05debe719",
+        "basename": "transects_with_elevation.geojson",
+        "nameroot": "transects_with_elevation",
+        "nameext": ".geojson",
+        "class": "File",
+        "checksum": "sha1$031452d5940b95da2f62096c2c63ecb05debe719",
+        "size": 88967,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:fd4ef7bd-cacc-4238-8623-851caa6216b1"
+    },
+    "transects_erosion": {
+        "location": "../data/79/793d5210ee98ad2308c54dde6c3c2a305c5c0a25",
+        "basename": "transects_with_erosion.geojson",
+        "nameroot": "transects_with_erosion",
+        "nameext": ".geojson",
+        "class": "File",
+        "checksum": "sha1$793d5210ee98ad2308c54dde6c3c2a305c5c0a25",
+        "size": 83574,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:8e375feb-604b-4d3c-84bb-52ffb797f5e8"
+    },
+    "transects_geojson": {
+        "location": "../data/f3/f3b591e75c886a5daa66f09ef227818ffc81a6d7",
+        "basename": "transects.geojson",
+        "nameroot": "transects",
+        "nameext": ".geojson",
+        "class": "File",
+        "checksum": "sha1$f3b591e75c886a5daa66f09ef227818ffc81a6d7",
+        "size": 64203,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:2178e2b5-08d5-4212-b1a9-cd177d86a27f"
+    },
+    "transects_landcover": {
+        "location": "../data/d3/d3788d02a6ad3a8b36034cd4e205cf32999fc0b2",
+        "basename": "transects_with_land_cover.geojson",
+        "nameroot": "transects_with_land_cover",
+        "nameext": ".geojson",
+        "class": "File",
+        "checksum": "sha1$d3788d02a6ad3a8b36034cd4e205cf32999fc0b2",
+        "size": 96465,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:b822428c-0a2e-42e2-930e-9bc9ccee14d6"
+    },
+    "transects_slope": {
+        "location": "../data/6b/6b1e0dc43d7375de669c7f7add215ef80e3f4730",
+        "basename": "transects_with_slope.geojson",
+        "nameroot": "transects_with_slope",
+        "nameext": ".geojson",
+        "class": "File",
+        "checksum": "sha1$6b1e0dc43d7375de669c7f7add215ef80e3f4730",
+        "size": 92679,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:dd55c741-4af1-49ff-8c82-8ab484ffe151"
+    },
+    "validated_config": {
+        "location": "../data/41/412423ed075a6120e494f625a736cb20a7104f94",
+        "basename": "config_validated.json",
+        "nameroot": "config_validated",
+        "nameext": ".json",
+        "class": "File",
+        "checksum": "sha1$412423ed075a6120e494f625a736cb20a7104f94",
+        "size": 6713,
+        "http://commonwl.org/cwltool#generation": 0,
+        "@id": "urn:uuid:67a29e69-7bd0-42ff-abc4-d43e00c354e9"
+    }
+}

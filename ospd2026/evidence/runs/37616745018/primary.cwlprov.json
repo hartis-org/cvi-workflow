@@ -1,0 +1,1718 @@
+{
+  "prefix": {
+    "wfprov": "http://purl.org/wf4ever/wfprov#",
+    "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+    "cwlprov": "https://w3id.org/cwl/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "schema": "http://schema.org/",
+    "orcid": "https://orcid.org/",
+    "id": "urn:uuid:",
+    "data": "urn:hash::sha1:",
+    "sha256": "nih:sha-256;",
+    "researchobject": "arcp://uuid,b3515e13-e24c-410c-adca-2362f12277db/",
+    "metadata": "arcp://uuid,b3515e13-e24c-410c-adca-2362f12277db/metadata/",
+    "provenance": "arcp://uuid,b3515e13-e24c-410c-adca-2362f12277db/metadata/provenance/",
+    "wf": "arcp://uuid,b3515e13-e24c-410c-adca-2362f12277db/workflow/packed.cwl#",
+    "input": "arcp://uuid,b3515e13-e24c-410c-adca-2362f12277db/workflow/primary-job.json#",
+    "wf4ever": "http://purl.org/wf4ever/wf4ever#"
+  },
+  "agent": {
+    "id:d00fab6b-1e95-4c2f-8bd7-d35bb8da8403": {},
+    "id:d946bc26-d33e-471d-bb33-0873cedacd14": {
+      "prov:type": [
+        {
+          "$": "prov:SoftwareAgent",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:WorkflowEngine",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "prov:label": "cwltool 3.3.20260925135507"
+    },
+    "id:d14d2e9a-8e75-46f2-99dd-85f3a49dee2d": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    },
+    "id:0b91f557-0522-4edb-87b7-2d93cddd2722": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    },
+    "id:4ae8159e-b58d-431e-9ffc-98c04127dace": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    },
+    "id:96f1cab2-3296-4de9-9306-60f53b454586": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    },
+    "id:869234c0-2129-4007-a891-f30c6a8574eb": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    },
+    "id:c48a155e-c76a-4cfc-a384-f2afc3f15139": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    },
+    "id:591971a8-a559-48af-9561-922bd26857d9": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    },
+    "id:148ce78b-0dde-4851-b041-64f304474282": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "cwlprov:image": "ghcr.io/hartis-org/cvi-workflow:latest",
+      "prov:label": "Container execution of image ghcr.io/hartis-org/cvi-workflow:latest"
+    }
+  },
+  "wasStartedBy": {
+    "_:id1": {
+      "prov:activity": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:starter": "id:d00fab6b-1e95-4c2f-8bd7-d35bb8da8403",
+      "prov:time": "2026-10-07T11:51:03.697639"
+    },
+    "_:id3": {
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:starter": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:time": "2026-10-07T11:51:03.697703"
+    },
+    "_:id12": {
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:51:05.394481"
+    },
+    "_:id23": {
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:51:06.544640"
+    },
+    "_:id34": {
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:54:50.882848"
+    },
+    "_:id44": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:54:51.892367"
+    },
+    "_:id57": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:54:54.693353"
+    },
+    "_:id70": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:04.786004"
+    },
+    "_:id83": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:13.646370"
+    },
+    "_:id96": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:starter": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:21.698509"
+    }
+  },
+  "activity": {
+    "id:b3515e13-e24c-410c-adca-2362f12277db": {
+      "prov:startTime": "2026-10-07T11:51:03.697663",
+      "prov:type": {
+        "$": "wfprov:WorkflowRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main"
+    },
+    "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/setup_env"
+    },
+    "id:77c9facd-58f1-4002-b538-75f8d7e741a0": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/extract_coastline"
+    },
+    "id:70984778-1acd-4e33-b9d7-b14d3f2b543e": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/generate_transects"
+    },
+    "id:332e9adf-d5bd-4870-9eb0-123398921abd": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/compute_erosion"
+    },
+    "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/compute_landcover"
+    },
+    "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/compute_slope"
+    },
+    "id:2e17f485-667a-42a4-b444-9a932eeb8626": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/compute_elevation"
+    },
+    "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "prov:QUALIFIED_NAME"
+      },
+      "prov:label": "Run of workflow/packed.cwl#main/compute_cvi"
+    }
+  },
+  "wasAssociatedWith": {
+    "_:id2": {
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main"
+    },
+    "_:id11": {
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/setup_env"
+    },
+    "_:id13": {
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:agent": "id:d14d2e9a-8e75-46f2-99dd-85f3a49dee2d"
+    },
+    "_:id22": {
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/extract_coastline"
+    },
+    "_:id24": {
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:agent": "id:0b91f557-0522-4edb-87b7-2d93cddd2722"
+    },
+    "_:id33": {
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/generate_transects"
+    },
+    "_:id35": {
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:agent": "id:4ae8159e-b58d-431e-9ffc-98c04127dace"
+    },
+    "_:id43": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/compute_erosion"
+    },
+    "_:id45": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:agent": "id:96f1cab2-3296-4de9-9306-60f53b454586"
+    },
+    "_:id56": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/compute_landcover"
+    },
+    "_:id58": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:agent": "id:869234c0-2129-4007-a891-f30c6a8574eb"
+    },
+    "_:id69": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/compute_slope"
+    },
+    "_:id71": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:agent": "id:c48a155e-c76a-4cfc-a384-f2afc3f15139"
+    },
+    "_:id82": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/compute_elevation"
+    },
+    "_:id84": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:agent": "id:591971a8-a559-48af-9561-922bd26857d9"
+    },
+    "_:id95": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:agent": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:plan": "wf:main/compute_cvi"
+    },
+    "_:id97": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:agent": "id:148ce78b-0dde-4851-b041-64f304474282"
+    }
+  },
+  "entity": {
+    "wf:main": [
+      {
+        "prov:type": [
+          {
+            "$": "prov:Plan",
+            "type": "prov:QUALIFIED_NAME"
+          },
+          {
+            "$": "wfdesc:Workflow",
+            "type": "prov:QUALIFIED_NAME"
+          }
+        ],
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/compute_landcover",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/setup_env",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/compute_cvi",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/compute_slope",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/compute_elevation",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/extract_coastline",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/generate_transects",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      },
+      {
+        "wfdesc:hasSubProcess": {
+          "$": "wf:main/compute_erosion",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:label": "Prospective provenance"
+      }
+    ],
+    "wf:main/compute_landcover": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/setup_env": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/compute_cvi": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/compute_slope": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/compute_elevation": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/extract_coastline": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/generate_transects": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "wf:main/compute_erosion": {
+      "prov:type": [
+        {
+          "$": "prov:Plan",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfdesc:Process",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ]
+    },
+    "data:c3802bbcf2fd77e3c2335092c78934d17e6fe7cf": [
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      }
+    ],
+    "id:2cba6675-a805-4bb9-8934-c667e1e43975": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "cvi_scoring_simple.json",
+      "cwlprov:nameroot": "cvi_scoring_simple",
+      "cwlprov:nameext": ".json"
+    },
+    "data:0b597689aeb4a7e68e414ab7c3feb4be9a8fbd1a": [
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      }
+    ],
+    "id:7857473d-493a-4739-9318-3f19eafcc137": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "med_coastal_aois.csv",
+      "cwlprov:nameroot": "med_coastal_aois",
+      "cwlprov:nameext": ".csv"
+    },
+    "data:5518c199497926f6e35023acc891c4fe2ada1c6d": [
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        "prov:value": "output_data"
+      }
+    ],
+    "data:3a0a5c9f2b93999a04528054cfa7d9c6cb97ca6c": [
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      },
+      {
+        "prov:type": {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      }
+    ],
+    "id:6e4612e5-9a91-4194-b3e7-bdc19c0ecdba": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "tokens.env",
+      "cwlprov:nameroot": "tokens",
+      "cwlprov:nameext": ".env"
+    },
+    "id:42d3692c-0a70-4c55-a328-57f43548e306": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "cvi_scoring_simple.json",
+      "cwlprov:nameroot": "cvi_scoring_simple",
+      "cwlprov:nameext": ".json"
+    },
+    "data:2f6d63d1fb7497dfa78a8dc5ffdac8832966c3d9": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:d5e94ab6-1df1-4131-8171-251ffd51c825": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "setup_env.py",
+      "cwlprov:nameroot": "setup_env",
+      "cwlprov:nameext": ".py"
+    },
+    "data:412423ed075a6120e494f625a736cb20a7104f94": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "config_validated.json",
+      "cwlprov:nameroot": "config_validated",
+      "cwlprov:nameext": ".json"
+    },
+    "id:07e85588-fbb5-4910-af42-88b4af0aa71a": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "med_coastal_aois.csv",
+      "cwlprov:nameroot": "med_coastal_aois",
+      "cwlprov:nameext": ".csv"
+    },
+    "data:f035061cffd85deb128a810dc906d11d15542f87": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:0d0a24c8-dda4-482a-99eb-e1cd12f2539d": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "extract_coastline.py",
+      "cwlprov:nameroot": "extract_coastline",
+      "cwlprov:nameext": ".py"
+    },
+    "data:04fcfd9d12ef50311245db7d9411eb8d18b96fd9": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:08bfca82-5faf-42d3-8163-07f06f3b6318": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "coastline.gpkg",
+      "cwlprov:nameroot": "coastline",
+      "cwlprov:nameext": ".gpkg"
+    },
+    "data:e8f3ff98829a9ece1842429c6378b74fc0cf3432": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:65f59333-75df-43ba-9ef0-6e51b05ef035": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "generate_transects.py",
+      "cwlprov:nameroot": "generate_transects",
+      "cwlprov:nameext": ".py"
+    },
+    "data:f3b591e75c886a5daa66f09ef227818ffc81a6d7": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "transects.geojson",
+      "cwlprov:nameroot": "transects",
+      "cwlprov:nameext": ".geojson"
+    },
+    "data:b5653785187d42df7dcafe663a38f00dfd74062f": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:8ec3c6ce-1ab0-4b5e-addf-793d7b70430f": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "compute_erosion.py",
+      "cwlprov:nameroot": "compute_erosion",
+      "cwlprov:nameext": ".py"
+    },
+    "id:41dbcf50-0cdf-447d-b7ac-bc0822091cea": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "tokens.env",
+      "cwlprov:nameroot": "tokens",
+      "cwlprov:nameext": ".env"
+    },
+    "data:793d5210ee98ad2308c54dde6c3c2a305c5c0a25": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:8e375feb-604b-4d3c-84bb-52ffb797f5e8": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "transects_with_erosion.geojson",
+      "cwlprov:nameroot": "transects_with_erosion",
+      "cwlprov:nameext": ".geojson"
+    },
+    "data:9b1aa54aeb442e20eb90770bd072f63950f02033": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:89d5398d-daeb-4982-a8c1-4558fe8b8107": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "compute_landcover.py",
+      "cwlprov:nameroot": "compute_landcover",
+      "cwlprov:nameext": ".py"
+    },
+    "id:12b24537-0d7b-4d90-bce8-9486a011327c": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "tokens.env",
+      "cwlprov:nameroot": "tokens",
+      "cwlprov:nameext": ".env"
+    },
+    "data:d3788d02a6ad3a8b36034cd4e205cf32999fc0b2": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:b822428c-0a2e-42e2-930e-9bc9ccee14d6": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "transects_with_land_cover.geojson",
+      "cwlprov:nameroot": "transects_with_land_cover",
+      "cwlprov:nameext": ".geojson"
+    },
+    "data:119d9f53532679713b2becaae0783a3498750eff": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:55faa079-e982-44bd-9991-a1a88f47f9d4": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "compute_slope.py",
+      "cwlprov:nameroot": "compute_slope",
+      "cwlprov:nameext": ".py"
+    },
+    "id:cbf322b6-4775-4b16-bddf-2968db703694": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "tokens.env",
+      "cwlprov:nameroot": "tokens",
+      "cwlprov:nameext": ".env"
+    },
+    "data:6b1e0dc43d7375de669c7f7add215ef80e3f4730": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:dd55c741-4af1-49ff-8c82-8ab484ffe151": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "transects_with_slope.geojson",
+      "cwlprov:nameroot": "transects_with_slope",
+      "cwlprov:nameext": ".geojson"
+    },
+    "data:12302e08cfa46728e75dc81c367c85c73429c436": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:68a3c571-fc68-47dc-96c9-bc6f83d602dc": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "compute_elevation.py",
+      "cwlprov:nameroot": "compute_elevation",
+      "cwlprov:nameext": ".py"
+    },
+    "id:e9d71c1b-161a-44c7-b28d-8daa3b46bca1": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "tokens.env",
+      "cwlprov:nameroot": "tokens",
+      "cwlprov:nameext": ".env"
+    },
+    "data:031452d5940b95da2f62096c2c63ecb05debe719": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:fd4ef7bd-cacc-4238-8623-851caa6216b1": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "transects_with_elevation.geojson",
+      "cwlprov:nameroot": "transects_with_elevation",
+      "cwlprov:nameext": ".geojson"
+    },
+    "data:a194caa1e68a8e7a4f707b37e07fe68f6b5bfa6b": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:5e7a6faa-5ee9-4fa7-b805-d54342ba6a36": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "compute_cvi.py",
+      "cwlprov:nameroot": "compute_cvi",
+      "cwlprov:nameext": ".py"
+    },
+    "data:77afb37fe51d7491f8ca8390ae47b7324fb6d48d": {
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "id:b6242675-c103-484f-be80-58b288d56f2f": {
+      "prov:type": [
+        {
+          "$": "wf4ever:File",
+          "type": "prov:QUALIFIED_NAME"
+        },
+        {
+          "$": "wfprov:Artifact",
+          "type": "prov:QUALIFIED_NAME"
+        }
+      ],
+      "cwlprov:basename": "transects_with_cvi_equal.geojson",
+      "cwlprov:nameroot": "transects_with_cvi_equal",
+      "cwlprov:nameext": ".geojson"
+    }
+  },
+  "specializationOf": {
+    "_:id4": {
+      "prov:specificEntity": "id:2cba6675-a805-4bb9-8934-c667e1e43975",
+      "prov:generalEntity": "data:c3802bbcf2fd77e3c2335092c78934d17e6fe7cf"
+    },
+    "_:id6": {
+      "prov:specificEntity": "id:7857473d-493a-4739-9318-3f19eafcc137",
+      "prov:generalEntity": "data:0b597689aeb4a7e68e414ab7c3feb4be9a8fbd1a"
+    },
+    "_:id9": {
+      "prov:specificEntity": "id:6e4612e5-9a91-4194-b3e7-bdc19c0ecdba",
+      "prov:generalEntity": "data:3a0a5c9f2b93999a04528054cfa7d9c6cb97ca6c"
+    },
+    "_:id14": {
+      "prov:specificEntity": "id:42d3692c-0a70-4c55-a328-57f43548e306",
+      "prov:generalEntity": "data:c3802bbcf2fd77e3c2335092c78934d17e6fe7cf"
+    },
+    "_:id17": {
+      "prov:specificEntity": "id:d5e94ab6-1df1-4131-8171-251ffd51c825",
+      "prov:generalEntity": "data:2f6d63d1fb7497dfa78a8dc5ffdac8832966c3d9"
+    },
+    "_:id19": {
+      "prov:specificEntity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:generalEntity": "data:412423ed075a6120e494f625a736cb20a7104f94"
+    },
+    "_:id25": {
+      "prov:specificEntity": "id:07e85588-fbb5-4910-af42-88b4af0aa71a",
+      "prov:generalEntity": "data:0b597689aeb4a7e68e414ab7c3feb4be9a8fbd1a"
+    },
+    "_:id28": {
+      "prov:specificEntity": "id:0d0a24c8-dda4-482a-99eb-e1cd12f2539d",
+      "prov:generalEntity": "data:f035061cffd85deb128a810dc906d11d15542f87"
+    },
+    "_:id30": {
+      "prov:specificEntity": "id:08bfca82-5faf-42d3-8163-07f06f3b6318",
+      "prov:generalEntity": "data:04fcfd9d12ef50311245db7d9411eb8d18b96fd9"
+    },
+    "_:id38": {
+      "prov:specificEntity": "id:65f59333-75df-43ba-9ef0-6e51b05ef035",
+      "prov:generalEntity": "data:e8f3ff98829a9ece1842429c6378b74fc0cf3432"
+    },
+    "_:id40": {
+      "prov:specificEntity": "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f",
+      "prov:generalEntity": "data:f3b591e75c886a5daa66f09ef227818ffc81a6d7"
+    },
+    "_:id48": {
+      "prov:specificEntity": "id:8ec3c6ce-1ab0-4b5e-addf-793d7b70430f",
+      "prov:generalEntity": "data:b5653785187d42df7dcafe663a38f00dfd74062f"
+    },
+    "_:id50": {
+      "prov:specificEntity": "id:41dbcf50-0cdf-447d-b7ac-bc0822091cea",
+      "prov:generalEntity": "data:3a0a5c9f2b93999a04528054cfa7d9c6cb97ca6c"
+    },
+    "_:id53": {
+      "prov:specificEntity": "id:8e375feb-604b-4d3c-84bb-52ffb797f5e8",
+      "prov:generalEntity": "data:793d5210ee98ad2308c54dde6c3c2a305c5c0a25"
+    },
+    "_:id61": {
+      "prov:specificEntity": "id:89d5398d-daeb-4982-a8c1-4558fe8b8107",
+      "prov:generalEntity": "data:9b1aa54aeb442e20eb90770bd072f63950f02033"
+    },
+    "_:id63": {
+      "prov:specificEntity": "id:12b24537-0d7b-4d90-bce8-9486a011327c",
+      "prov:generalEntity": "data:3a0a5c9f2b93999a04528054cfa7d9c6cb97ca6c"
+    },
+    "_:id66": {
+      "prov:specificEntity": "id:b822428c-0a2e-42e2-930e-9bc9ccee14d6",
+      "prov:generalEntity": "data:d3788d02a6ad3a8b36034cd4e205cf32999fc0b2"
+    },
+    "_:id74": {
+      "prov:specificEntity": "id:55faa079-e982-44bd-9991-a1a88f47f9d4",
+      "prov:generalEntity": "data:119d9f53532679713b2becaae0783a3498750eff"
+    },
+    "_:id76": {
+      "prov:specificEntity": "id:cbf322b6-4775-4b16-bddf-2968db703694",
+      "prov:generalEntity": "data:3a0a5c9f2b93999a04528054cfa7d9c6cb97ca6c"
+    },
+    "_:id79": {
+      "prov:specificEntity": "id:dd55c741-4af1-49ff-8c82-8ab484ffe151",
+      "prov:generalEntity": "data:6b1e0dc43d7375de669c7f7add215ef80e3f4730"
+    },
+    "_:id87": {
+      "prov:specificEntity": "id:68a3c571-fc68-47dc-96c9-bc6f83d602dc",
+      "prov:generalEntity": "data:12302e08cfa46728e75dc81c367c85c73429c436"
+    },
+    "_:id89": {
+      "prov:specificEntity": "id:e9d71c1b-161a-44c7-b28d-8daa3b46bca1",
+      "prov:generalEntity": "data:3a0a5c9f2b93999a04528054cfa7d9c6cb97ca6c"
+    },
+    "_:id92": {
+      "prov:specificEntity": "id:fd4ef7bd-cacc-4238-8623-851caa6216b1",
+      "prov:generalEntity": "data:031452d5940b95da2f62096c2c63ecb05debe719"
+    },
+    "_:id104": {
+      "prov:specificEntity": "id:5e7a6faa-5ee9-4fa7-b805-d54342ba6a36",
+      "prov:generalEntity": "data:a194caa1e68a8e7a4f707b37e07fe68f6b5bfa6b"
+    },
+    "_:id106": {
+      "prov:specificEntity": "id:b6242675-c103-484f-be80-58b288d56f2f",
+      "prov:generalEntity": "data:77afb37fe51d7491f8ca8390ae47b7324fb6d48d"
+    }
+  },
+  "used": {
+    "_:id5": {
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:entity": "id:2cba6675-a805-4bb9-8934-c667e1e43975",
+      "prov:time": "2026-10-07T11:51:05.347228",
+      "prov:role": {
+        "$": "wf:main/config_json",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id7": {
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:entity": "id:7857473d-493a-4739-9318-3f19eafcc137",
+      "prov:time": "2026-10-07T11:51:05.347497",
+      "prov:role": {
+        "$": "wf:main/med_aois_csv",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id8": {
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:51:05.347752",
+      "prov:role": {
+        "$": "wf:main/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id10": {
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:entity": "id:6e4612e5-9a91-4194-b3e7-bdc19c0ecdba",
+      "prov:time": "2026-10-07T11:51:05.347995",
+      "prov:role": {
+        "$": "wf:main/tokens_env",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id15": {
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:entity": "id:42d3692c-0a70-4c55-a328-57f43548e306",
+      "prov:time": "2026-10-07T11:51:05.536930",
+      "prov:role": {
+        "$": "wf:main/setup_env/config_json",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id16": {
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:51:05.537164",
+      "prov:role": {
+        "$": "wf:main/setup_env/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id18": {
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:entity": "id:d5e94ab6-1df1-4131-8171-251ffd51c825",
+      "prov:time": "2026-10-07T11:51:05.537538",
+      "prov:role": {
+        "$": "wf:main/setup_env/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id26": {
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:entity": "id:07e85588-fbb5-4910-af42-88b4af0aa71a",
+      "prov:time": "2026-10-07T11:51:06.546115",
+      "prov:role": {
+        "$": "wf:main/extract_coastline/med_aois_csv",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id27": {
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:51:06.546547",
+      "prov:role": {
+        "$": "wf:main/extract_coastline/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id29": {
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:entity": "id:0d0a24c8-dda4-482a-99eb-e1cd12f2539d",
+      "prov:time": "2026-10-07T11:51:06.546900",
+      "prov:role": {
+        "$": "wf:main/extract_coastline/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id36": {
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:entity": "id:08bfca82-5faf-42d3-8163-07f06f3b6318",
+      "prov:time": "2026-10-07T11:54:50.883957",
+      "prov:role": {
+        "$": "wf:main/generate_transects/coastline_gpkg",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id37": {
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:54:50.884368",
+      "prov:role": {
+        "$": "wf:main/generate_transects/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id39": {
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:entity": "id:65f59333-75df-43ba-9ef0-6e51b05ef035",
+      "prov:time": "2026-10-07T11:54:50.884720",
+      "prov:role": {
+        "$": "wf:main/generate_transects/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id46": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:entity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:time": "2026-10-07T11:54:51.893550",
+      "prov:role": {
+        "$": "wf:main/compute_erosion/config_json",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id47": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:54:51.894031",
+      "prov:role": {
+        "$": "wf:main/compute_erosion/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id49": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:entity": "id:8ec3c6ce-1ab0-4b5e-addf-793d7b70430f",
+      "prov:time": "2026-10-07T11:54:51.894510",
+      "prov:role": {
+        "$": "wf:main/compute_erosion/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id51": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:entity": "id:41dbcf50-0cdf-447d-b7ac-bc0822091cea",
+      "prov:time": "2026-10-07T11:54:51.894851",
+      "prov:role": {
+        "$": "wf:main/compute_erosion/tokens_env",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id52": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:entity": "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f",
+      "prov:time": "2026-10-07T11:54:51.894885",
+      "prov:role": {
+        "$": "wf:main/compute_erosion/transects_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id59": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:entity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:time": "2026-10-07T11:54:54.694535",
+      "prov:role": {
+        "$": "wf:main/compute_landcover/config_json",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id60": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:54:54.695046",
+      "prov:role": {
+        "$": "wf:main/compute_landcover/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id62": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:entity": "id:89d5398d-daeb-4982-a8c1-4558fe8b8107",
+      "prov:time": "2026-10-07T11:54:54.695519",
+      "prov:role": {
+        "$": "wf:main/compute_landcover/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id64": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:entity": "id:12b24537-0d7b-4d90-bce8-9486a011327c",
+      "prov:time": "2026-10-07T11:54:54.695855",
+      "prov:role": {
+        "$": "wf:main/compute_landcover/tokens_env",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id65": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:entity": "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f",
+      "prov:time": "2026-10-07T11:54:54.695885",
+      "prov:role": {
+        "$": "wf:main/compute_landcover/transects_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id72": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:entity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:time": "2026-10-07T11:55:04.787178",
+      "prov:role": {
+        "$": "wf:main/compute_slope/config_json",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id73": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:55:04.787647",
+      "prov:role": {
+        "$": "wf:main/compute_slope/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id75": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:entity": "id:55faa079-e982-44bd-9991-a1a88f47f9d4",
+      "prov:time": "2026-10-07T11:55:04.788028",
+      "prov:role": {
+        "$": "wf:main/compute_slope/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id77": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:entity": "id:cbf322b6-4775-4b16-bddf-2968db703694",
+      "prov:time": "2026-10-07T11:55:04.788302",
+      "prov:role": {
+        "$": "wf:main/compute_slope/tokens_env",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id78": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:entity": "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f",
+      "prov:time": "2026-10-07T11:55:04.788323",
+      "prov:role": {
+        "$": "wf:main/compute_slope/transects_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id85": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:entity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:time": "2026-10-07T11:55:13.647575",
+      "prov:role": {
+        "$": "wf:main/compute_elevation/config_json",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id86": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:55:13.647986",
+      "prov:role": {
+        "$": "wf:main/compute_elevation/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id88": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:entity": "id:68a3c571-fc68-47dc-96c9-bc6f83d602dc",
+      "prov:time": "2026-10-07T11:55:13.648397",
+      "prov:role": {
+        "$": "wf:main/compute_elevation/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id90": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:entity": "id:e9d71c1b-161a-44c7-b28d-8daa3b46bca1",
+      "prov:time": "2026-10-07T11:55:13.648646",
+      "prov:role": {
+        "$": "wf:main/compute_elevation/tokens_env",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id91": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:entity": "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f",
+      "prov:time": "2026-10-07T11:55:13.648671",
+      "prov:role": {
+        "$": "wf:main/compute_elevation/transects_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id98": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:entity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:time": "2026-10-07T11:55:21.699715",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/config_json",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id99": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:entity": "data:5518c199497926f6e35023acc891c4fe2ada1c6d",
+      "prov:time": "2026-10-07T11:55:21.700168",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/output_dir",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id100": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:entity": "id:fd4ef7bd-cacc-4238-8623-851caa6216b1",
+      "prov:time": "2026-10-07T11:55:21.700196",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/transects_elevation",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id101": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:entity": "id:8e375feb-604b-4d3c-84bb-52ffb797f5e8",
+      "prov:time": "2026-10-07T11:55:21.700235",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/transects_erosion",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id102": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:entity": "id:b822428c-0a2e-42e2-930e-9bc9ccee14d6",
+      "prov:time": "2026-10-07T11:55:21.700251",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/transects_landcover",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id103": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:entity": "id:dd55c741-4af1-49ff-8c82-8ab484ffe151",
+      "prov:time": "2026-10-07T11:55:21.700265",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/transects_slope",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id105": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:entity": "id:5e7a6faa-5ee9-4fa7-b805-d54342ba6a36",
+      "prov:time": "2026-10-07T11:55:21.700631",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/script",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    }
+  },
+  "wasGeneratedBy": {
+    "_:id20": {
+      "prov:entity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:time": "2026-10-07T11:51:06.539584",
+      "prov:role": {
+        "$": "wf:main/setup_env/config_validated",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id31": {
+      "prov:entity": "id:08bfca82-5faf-42d3-8163-07f06f3b6318",
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:time": "2026-10-07T11:54:50.878769",
+      "prov:role": {
+        "$": "wf:main/extract_coastline/coastline_gpkg",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id41": {
+      "prov:entity": "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f",
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:time": "2026-10-07T11:54:51.886762",
+      "prov:role": {
+        "$": "wf:main/generate_transects/transects_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id54": {
+      "prov:entity": "id:8e375feb-604b-4d3c-84bb-52ffb797f5e8",
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:time": "2026-10-07T11:54:54.687709",
+      "prov:role": {
+        "$": "wf:main/compute_erosion/result",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id67": {
+      "prov:entity": "id:b822428c-0a2e-42e2-930e-9bc9ccee14d6",
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:time": "2026-10-07T11:55:04.779185",
+      "prov:role": {
+        "$": "wf:main/compute_landcover/result",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id80": {
+      "prov:entity": "id:dd55c741-4af1-49ff-8c82-8ab484ffe151",
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:time": "2026-10-07T11:55:13.640137",
+      "prov:role": {
+        "$": "wf:main/compute_slope/result",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id93": {
+      "prov:entity": "id:fd4ef7bd-cacc-4238-8623-851caa6216b1",
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:time": "2026-10-07T11:55:21.692166",
+      "prov:role": {
+        "$": "wf:main/compute_elevation/result",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id107": {
+      "prov:entity": "id:b6242675-c103-484f-be80-58b288d56f2f",
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:time": "2026-10-07T11:55:22.702751",
+      "prov:role": {
+        "$": "wf:main/compute_cvi/out_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id109": {
+      "prov:entity": "id:08bfca82-5faf-42d3-8163-07f06f3b6318",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/coastline_gpkg",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id110": {
+      "prov:entity": "id:b6242675-c103-484f-be80-58b288d56f2f",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/cvi_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id111": {
+      "prov:entity": "id:fd4ef7bd-cacc-4238-8623-851caa6216b1",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/transects_elevation",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id112": {
+      "prov:entity": "id:8e375feb-604b-4d3c-84bb-52ffb797f5e8",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/transects_erosion",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id113": {
+      "prov:entity": "id:2178e2b5-08d5-4212-b1a9-cd177d86a27f",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/transects_geojson",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id114": {
+      "prov:entity": "id:b822428c-0a2e-42e2-930e-9bc9ccee14d6",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/transects_landcover",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id115": {
+      "prov:entity": "id:dd55c741-4af1-49ff-8c82-8ab484ffe151",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/transects_slope",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    },
+    "_:id116": {
+      "prov:entity": "id:67a29e69-7bd0-42ff-abc4-d43e00c354e9",
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.706687",
+      "prov:role": {
+        "$": "wf:main/primary/validated_config",
+        "type": "prov:QUALIFIED_NAME"
+      }
+    }
+  },
+  "wasEndedBy": {
+    "_:id21": {
+      "prov:activity": "id:6e615b31-cddb-40dc-a09b-dc1d703d6ed6",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:51:06.539579"
+    },
+    "_:id32": {
+      "prov:activity": "id:77c9facd-58f1-4002-b538-75f8d7e741a0",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:54:50.878765"
+    },
+    "_:id42": {
+      "prov:activity": "id:70984778-1acd-4e33-b9d7-b14d3f2b543e",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:54:51.886758"
+    },
+    "_:id55": {
+      "prov:activity": "id:332e9adf-d5bd-4870-9eb0-123398921abd",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:54:54.687707"
+    },
+    "_:id68": {
+      "prov:activity": "id:e950e9df-7072-4f9c-9cfc-7b4cd130e481",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:04.779182"
+    },
+    "_:id81": {
+      "prov:activity": "id:37c3d203-b1aa-4ac3-bfd8-cac78a8ce2f2",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:13.640133"
+    },
+    "_:id94": {
+      "prov:activity": "id:2e17f485-667a-42a4-b444-9a932eeb8626",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:21.692162"
+    },
+    "_:id108": {
+      "prov:activity": "id:2711d826-8ece-4e0e-b8a7-f0a78c93296c",
+      "prov:ender": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:time": "2026-10-07T11:55:22.702746"
+    },
+    "_:id117": {
+      "prov:activity": "id:b3515e13-e24c-410c-adca-2362f12277db",
+      "prov:ender": "id:d946bc26-d33e-471d-bb33-0873cedacd14",
+      "prov:time": "2026-10-07T11:55:22.706860"
+    }
+  }
+}
