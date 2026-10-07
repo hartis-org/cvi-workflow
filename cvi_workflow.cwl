@@ -2,6 +2,10 @@ cwlVersion: v1.2
 class: Workflow
 label: CVI Workflow (Dockerized)
 
+requirements:
+  NetworkAccess:
+    networkAccess: true
+
 inputs:
   config_json: File
   med_aois_csv: File

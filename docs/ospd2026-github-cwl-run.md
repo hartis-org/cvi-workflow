@@ -4,8 +4,9 @@ The `ospd2026-cwl-run.yml` workflow runs the CVI workflow on a GitHub-hosted
 runner. Each CWL processing step uses the Docker image built from this
 repository. The workflow also requests a CWLProv provenance package from
 `cwltool` and uploads the outputs and provenance as one GitHub Actions artifact.
-The run uses `cwltool --enable-net` because the coastline extraction step calls
-the public Nominatim and Overpass services.
+The CWL workflow declares `NetworkAccess: true` because the coastline
+extraction step calls the public Nominatim and Overpass services and the
+processing steps may use CDSE services.
 
 ## Required repository secrets
 
