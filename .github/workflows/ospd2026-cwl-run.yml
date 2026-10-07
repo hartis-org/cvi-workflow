@@ -42,6 +42,7 @@ jobs:
         run: |
           mkdir -p ci-artifacts/output ci-artifacts/cwlprov
           cwltool \
+            --enable-net \
             --provenance "$GITHUB_WORKSPACE/ci-artifacts/cwlprov" \
             --outdir "$GITHUB_WORKSPACE/ci-artifacts/output" \
             --tmpdir-prefix "$GITHUB_WORKSPACE/ci-artifacts/tmp-" \
