@@ -58,6 +58,7 @@ jobs:
               xargs -0 grep -IlZ 'AWS_SECRET_ACCESS_KEY=' |
               xargs -0r rm -f
           fi
+          find ci-artifacts -maxdepth 1 -type d -name 'tmp-*' -prune -exec rm -rf {} +
 
       - name: Upload workflow outputs and provenance
         if: always()
