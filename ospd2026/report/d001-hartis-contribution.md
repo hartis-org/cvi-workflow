@@ -22,7 +22,7 @@ The main open points are the relationship between a provenance profile, a proces
 
 #### Future Work
 
-HARTIS will refine the normalized CVI provenance chain, compare it with the common participant patterns and prepare validation evidence for the activity, entity and role relationships. The first D001 contribution will document the workflow profiling approach, the provenance encoding choice, the process-type and Register contribution, the validation results and the lessons learned. The examples will be updated when the shared provenance profile and Register URI pattern are confirmed.
+After OSPD 2026, HARTIS plans to assess the methodology across additional, more mature workflow platforms and in the context of European digital-twin infrastructure for coastal and marine applications. The methodology combines workflow profiling, explicit description of processing activities and inputs/outputs, provenance capture, validation evidence and reproducible execution. The aim will be to evaluate its portability, interoperability and reproducibility across different workflows and execution environments.
 
 #### Figure
 
@@ -107,6 +107,8 @@ The current evidence is structural, workflow-based and linked to repository arti
 - the generic activity definitions correspond to operations present in the AI-DGGS FII workflow.
 
 The structural checks pass. Validation against the shared OGC provenance Building Block and final Register identifiers remains part of the next implementation stage; the shared OGC Docker validation toolchain remains pending.
+
+Within OSPD 2026, HARTIS will use the pilot results to refine the normalized CVI provenance chain, align the examples with the agreed shared provenance profile and Register URI pattern, and assess whether the provenance example and process-type definitions are ready for a mature Building Block or Register submission.
 
 A successful GitHub Actions run (`37607636698`) executed the containerised CWL
 workflow end to end. It produced the coastline GeoPackage, transects, the
