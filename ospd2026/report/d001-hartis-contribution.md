@@ -137,10 +137,15 @@ The FII workflow shows that generic activity definitions are strongest when they
 
 ### B9. References
 
-- HARTIS CVI workflow source and profiling artifacts: this repository and its OSPD-2026 evidence package.
-- HARTIS transect-generation provenance example: `../provenance/cvi_transect_generation_provenance_example.json`.
-- HARTIS coastline-to-transects chain: `../provenance/cvi_coastline_to_transects_provenance_chain_2026-10-06.json`.
-- HARTIS normalized full workflow candidate: `../provenance/cvi_full_workflow_design_runtime_entities_2026-10-06.json`.
-- HARTIS artifact manifest: `../validation/cvi_workflow_artifact_manifest_2026-10-06.json`.
-- HARTIS validation notes: `../validation/`.
-- AI-DGGS FII demonstrator record: `PRV004` in the Geoprocessing Activity Data Acquisition workbook.
+- HARTIS CVI workflow definition and execution inputs: [`cvi_workflow.cwl`](../../cvi_workflow.cwl) and [`job_cvi.yaml`](../../job_cvi.yaml).
+- HARTIS single-step provenance example: [`cvi_transect_generation_step.json`](../building-block/prov-processing-step/examples/cvi_transect_generation_step.json).
+- HARTIS coastline-to-transects provenance chain: [`cvi_coastline_to_transects_provenance_chain.json`](../provenance/cvi_coastline_to_transects_provenance_chain.json).
+- HARTIS normalized full-workflow provenance candidate: [`cvi_full_workflow_design_runtime_entities.json`](../provenance/cvi_full_workflow_design_runtime_entities.json).
+- HARTIS processing-step Building Block draft: [`bblock.json`](../building-block/prov-processing-step/bblock.json), [`schema.yaml`](../building-block/prov-processing-step/schema.yaml) and [`examples.yaml`](../building-block/prov-processing-step/examples.yaml).
+- HARTIS activity definitions and `PRV004` demonstrator record: [`geoprocessing-activities.jsonld`](../register/geoprocessing-activities.jsonld).
+- HARTIS artifact manifest with file sizes and SHA-256 checksums: [`cvi_workflow_artifact_manifest.json`](../validation/cvi_workflow_artifact_manifest.json).
+- W3C PROV-O: https://www.w3.org/TR/prov-o/.
+- Common Workflow Language Specification: https://www.commonwl.org/specification/.
+- CWLProv provenance profile: https://github.com/common-workflow-language/cwlprov.
+- OGC Location Building Blocks: https://blocks.ogc.org/.
+- OGC API - Processes: https://ogcapi.ogc.org/processes/overview.html.
