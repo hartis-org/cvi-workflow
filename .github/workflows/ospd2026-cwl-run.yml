@@ -103,7 +103,8 @@ jobs:
             --base main \
             --head "$branch" \
             --title "Add sanitized CVI evidence for run ${GITHUB_RUN_ID}" \
-            --body "Automated evidence export from successful CVI workflow run ${GITHUB_RUN_ID}. The generated files passed the credential-value check."
+            --body "Automated evidence export from successful CVI workflow run ${GITHUB_RUN_ID}. The generated files passed the credential-value check." \
+            || echo "PR creation is disabled by repository policy. Open the branch manually: https://github.com/${GITHUB_REPOSITORY}/compare/main...${branch}?expand=1"
 
       - name: Remove temporary credentials
         if: always()
