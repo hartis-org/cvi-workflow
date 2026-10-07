@@ -53,6 +53,11 @@ jobs:
         if: always()
         run: |
           find ci-artifacts -type f -name 'tokens.env' -print -delete
+          if [ -d ci-artifacts/cwlprov/data ]; then
+            find ci-artifacts/cwlprov/data -type f -print0 |
+              xargs -0 grep -IlZ 'AWS_SECRET_ACCESS_KEY=' |
+              xargs -0r rm -f
+          fi
 
       - name: Upload workflow outputs and provenance
         if: always()
