@@ -1,0 +1,41 @@
+name: Validate OSPD-2026 evidence
+
+on:
+  push:
+    paths:
+      - "ospd2026/**"
+      - ".github/workflows/ospd2026-validation.yml"
+  pull_request:
+    paths:
+      - "ospd2026/**"
+      - ".github/workflows/ospd2026-validation.yml"
+
+jobs:
+  structural-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON and JSON-LD files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          files = list(Path("ospd2026").rglob("*.json"))
+          files += list(Path("ospd2026").rglob("*.jsonld"))
+          for path in files:
+              with path.open(encoding="utf-8") as stream:
+                  json.load(stream)
+              print(f"valid JSON: {path}")
+          if not files:
+              raise SystemExit("No JSON or JSON-LD files found")
+          PY
+
+      - name: Check required evidence files
+        run: |
+          test -s ospd2026/provenance/cvi_coastline_to_transects_provenance_chain.json
+          test -s ospd2026/provenance/cvi_full_workflow_design_runtime_entities.json
+          test -s ospd2026/register/geoprocessing-activities.jsonld
+          test -s ospd2026/validation/cvi_workflow_artifact_manifest.json
+          test -s ospd2026/building-block/prov-processing-step/schema.yaml

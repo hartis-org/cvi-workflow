@@ -1,0 +1,22 @@
+{
+  "name": "HARTIS CVI Processing Step Provenance",
+  "abstract": "A HARTIS implementation draft of the OSPD-2026 geospatial processing-step provenance profile, tested against a CVI transect-generation step.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-12T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1.0",
+  "dateOfLastChange": "2026-08-12",
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "provenance",
+    "prov-o",
+    "processing",
+    "ospd",
+    "cvi",
+    "hartis"
+  ],
+  "dependsOn": [
+    "ogc.ogc-utils.prov"
+  ]
+}

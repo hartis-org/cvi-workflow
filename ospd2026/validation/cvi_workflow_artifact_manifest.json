@@ -1,0 +1,95 @@
+{
+  "manifestId": "hartis:cvi-run-example-001/artifact-manifest/2026-10-06",
+  "status": "repository-evidence",
+  "workflowDefinition": "cvi_workflow.cwl",
+  "hashAlgorithm": "sha256",
+  "artifacts": [
+    {
+      "id": "hartis:cvi-run-example-001/entity/cvi-scoring-config",
+      "role": "workflow-input",
+      "path": "config/cvi_scoring_simple.json",
+      "sizeBytes": 6692,
+      "sha256": "9b497539dec79dfc8fd326f7ac0fec4eb5cbd7ba74d178d624b2e80004ee3ed9"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/med-coastal-aois",
+      "role": "workflow-input",
+      "path": "input_data/med_coastal_aois.csv",
+      "sizeBytes": 171,
+      "sha256": "9c3f9da1e2002808626fdbe59de0f6e32d6a0cfb769f2f485288687b7f240ee4"
+    },
+    {
+      "id": "hartis:cvi-workflow",
+      "role": "workflow-definition",
+      "path": "cvi_workflow.cwl",
+      "sizeBytes": 9189,
+      "sha256": "e4aa7fccac26673c8469fabe5476e4ebfb2ccbfca91895017ff75cbd23798425"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/validated-config",
+      "role": "generated-by-setup-env",
+      "path": "output_data/config_validated.json",
+      "sizeBytes": 6713,
+      "sha256": "101095917b60a5600291f86ba77eb67f8cae01f5a28a6367d1246bb58b8041cd"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/coastline-gpkg",
+      "role": "generated-by-extract-coastline",
+      "path": "output_data/coastline.gpkg",
+      "sizeBytes": 131072,
+      "sha256": "ad27c2eb700dc89e7a8cd1d092bcc9cab716ccfede9ec45c0174516647f9c053"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/transects-geojson",
+      "role": "generated-by-generate-transects",
+      "path": "output_data/transects.geojson",
+      "sizeBytes": 63180,
+      "sha256": "d00a3ba7cf51f438a3dcb4325df57d6871868c487d921012f27b89d32243058c"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/transects-with-land-cover",
+      "role": "generated-by-compute-landcover",
+      "path": "output_data/transects_with_land_cover.geojson",
+      "sizeBytes": 94384,
+      "sha256": "5d52dfa9967885d368461d076a33653b80163aa5c9f4be82a8fd6b8fc16162b7"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/transects-with-slope",
+      "role": "generated-by-compute-slope",
+      "path": "output_data/transects_with_slope.geojson",
+      "sizeBytes": 91041,
+      "sha256": "096f4b3961d5f1b60bdcf04860f1dd71bb82010305a6ec1aa78c0c666963319c"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/transects-with-erosion",
+      "role": "generated-by-compute-erosion",
+      "path": "output_data/transects_with_erosion.geojson",
+      "sizeBytes": 82456,
+      "sha256": "94569ce7c7abc5d46d16212d12b8d92afec12460299237222dd4b585c73b595f"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/transects-with-elevation",
+      "role": "generated-by-compute-elevation",
+      "path": "output_data/transects_with_elevation.geojson",
+      "sizeBytes": 87489,
+      "sha256": "39be8deb4db6ff2cc32262d3ca5757f0221ffba50e1c1bbbf02bd8ff8616741d"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/transects-with-cvi-equal",
+      "role": "generated-by-compute-cvi",
+      "path": "output_data/transects_with_cvi_equal.geojson",
+      "sizeBytes": 124325,
+      "sha256": "5b7ff734ef479064cff1d8f1c93db7c2f49d4e42f94729538327f93b55f58812"
+    }
+  ],
+  "sourceCode": [
+    {"step": "setup-env", "path": "steps/setup_env.py", "sizeBytes": 1247, "sha256": "4f2ac052bd5077e05e8deb8aca9b761f5a6f69844bd92003de18d2c3fe87f93c"},
+    {"step": "extract-coastline", "path": "steps/extract_coastline.py", "sizeBytes": 5911, "sha256": "3e9cc55167edc2c2085f9ce996283afeaab568d601356949f3b8245a795a7e03"},
+    {"step": "generate-transects", "path": "steps/generate_transects.py", "sizeBytes": 5008, "sha256": "a39c4ec1a4b610c786906d8cd7077c148fd12153a489947822259add5f364883"},
+    {"step": "compute-landcover", "path": "steps/compute_landcover.py", "sizeBytes": 8174, "sha256": "03ec46febfde9eb5114ebccf9ca4fb6f88b475e70f8f349e73e091d8cc4fc8b9"},
+    {"step": "compute-slope", "path": "steps/compute_slope.py", "sizeBytes": 7753, "sha256": "6310738dda2e783ddd7793511128364378b382b002d85893d199b5e0d0219138"},
+    {"step": "compute-erosion", "path": "steps/compute_erosion.py", "sizeBytes": 5011, "sha256": "d760c0f5ec01154e2093034537f007e19d90f031d8b9086f07cbeddf89b4e2ad"},
+    {"step": "compute-elevation", "path": "steps/compute_elevation.py", "sizeBytes": 7807, "sha256": "c8ad7bc7c8747b8aeab9ca8d4adc2dd279e93e8b0517ab5415be93e9df17f304"},
+    {"step": "compute-cvi", "path": "steps/compute_cvi.py", "sizeBytes": 4230, "sha256": "935b9a8a9d8e2aa1386fce9e625d53c5fd414277f2802123f7cfb357b26e5493"}
+  ]
+}

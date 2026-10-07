@@ -5,7 +5,7 @@ FROM ghcr.io/osgeo/gdal:ubuntu-small-latest
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# 1. Install compilers and system dependencies
+# Install compilers and system dependencies
 RUN apt-get update && apt-get install -y \
     python3-pip \
     build-essential \
@@ -15,13 +15,9 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements
+# Copy requirements and install Python libraries.
 COPY requirements.txt .
-
-# 2. Install Python libraries
-# FIX: Added '--ignore-installed'.
-# This forces pip to overwrite system packages (like numpy) instead of failing to uninstall them.
 RUN pip3 install --break-system-packages --no-cache-dir --ignore-installed -r requirements.txt
 
-# Copy the workflow steps
+# Keep the workflow implementation available in the runtime image.
 COPY steps/ /app/steps/

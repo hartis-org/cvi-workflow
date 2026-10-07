@@ -1,0 +1,187 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "ospd": "https://www.opengis.net/def/ospd/2026/",
+    "hartis": "https://hartis.org/ospd2026/",
+    "id": "@id",
+    "type": "@type",
+    "processType": "dct:type",
+    "used": "prov:used",
+    "generated": "prov:generated",
+    "qualifiedUsage": "prov:qualifiedUsage",
+    "entity": "prov:entity",
+    "hadRole": "prov:hadRole",
+    "wasGeneratedBy": "prov:wasGeneratedBy",
+    "wasAssociatedWith": "prov:wasAssociatedWith",
+    "wasInformedBy": "prov:wasInformedBy",
+    "qualifiedAssociation": "prov:qualifiedAssociation",
+    "agent": "prov:agent",
+    "hadPlan": "prov:hadPlan"
+  },
+  "id": "hartis:cvi-run-example-001/coastline-to-transects",
+  "type": "prov:Bundle",
+  "label": "HARTIS CVI coastline extraction to transect generation chain",
+  "designTime": [
+    {
+      "id": "hartis:cvi-workflow/step/extract-coastline",
+      "type": [
+        "prov:Plan",
+        "ospd:ProcessingStep"
+      ],
+      "label": "Extract coastline geometry for selected AOI",
+      "processType": "https://example.org/ospd/process-types/coastline-extraction",
+      "sourceWorkflow": "cvi_workflow.cwl",
+      "sourceCode": "steps/extract_coastline.py"
+    },
+    {
+      "id": "hartis:cvi-workflow/step/generate-transects",
+      "type": [
+        "prov:Plan",
+        "ospd:ProcessingStep"
+      ],
+      "label": "Generate cross-shore transects from coastline",
+      "processType": "https://example.org/ospd/process-types/transect-generation",
+      "sourceWorkflow": "cvi_workflow.cwl",
+      "sourceCode": "steps/generate_transects.py"
+    }
+  ],
+  "runtime": [
+    {
+      "id": "hartis:cvi-run-example-001/activity/extract-coastline",
+      "type": "prov:Activity",
+      "label": "Extract coastline geometry for selected AOI",
+      "processType": "https://example.org/ospd/process-types/coastline-extraction",
+      "used": [
+        "hartis:cvi-run-example-001/entity/med-coastal-aois-csv",
+        "hartis:cvi-run-example-001/entity/nominatim-bounding-box-response",
+        "hartis:cvi-run-example-001/entity/overpass-coastline-response"
+      ],
+      "generated": [
+        "hartis:cvi-run-example-001/entity/coastline-gpkg"
+      ],
+      "qualifiedUsage": [
+        {
+          "entity": "hartis:cvi-run-example-001/entity/med-coastal-aois-csv",
+          "hadRole": "hartis:role/aoi-candidate-source"
+        },
+        {
+          "entity": "hartis:cvi-run-example-001/entity/nominatim-bounding-box-response",
+          "hadRole": "hartis:role/aoi-geocoding-response"
+        },
+        {
+          "entity": "hartis:cvi-run-example-001/entity/overpass-coastline-response",
+          "hadRole": "hartis:role/coastline-feature-response"
+        }
+      ],
+      "wasAssociatedWith": [
+        "hartis:cvi-workflow/software/extract-coastline-py",
+        "hartis:cvi-workflow/service/osm-nominatim",
+        "hartis:cvi-workflow/service/osm-overpass",
+        "hartis:cvi-workflow/container/cvi-workflow-latest"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "hartis:cvi-workflow/container/cvi-workflow-latest",
+          "hadPlan": "hartis:cvi-workflow/step/extract-coastline"
+        }
+      ],
+      "parameters": {
+        "coastlineTag": "natural=coastline",
+        "aoiSelectionMethod": "workflow-selected AOI",
+        "outputFormat": "application/geopackage+sqlite3"
+      }
+    },
+    {
+      "id": "hartis:cvi-run-example-001/activity/generate-transects",
+      "type": "prov:Activity",
+      "label": "Generate cross-shore transects from coastline",
+      "processType": "https://example.org/ospd/process-types/transect-generation",
+      "used": [
+        "hartis:cvi-run-example-001/entity/coastline-gpkg"
+      ],
+      "generated": [
+        "hartis:cvi-run-example-001/entity/transects-geojson"
+      ],
+      "qualifiedUsage": [
+        {
+          "entity": "hartis:cvi-run-example-001/entity/coastline-gpkg",
+          "hadRole": "hartis:role/sourceCoastline"
+        }
+      ],
+      "wasAssociatedWith": [
+        "hartis:cvi-workflow/software/generate-transects-py",
+        "hartis:cvi-workflow/container/cvi-workflow-latest"
+      ],
+      "wasInformedBy": [
+        "hartis:cvi-run-example-001/activity/extract-coastline"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "hartis:cvi-workflow/container/cvi-workflow-latest",
+          "hadPlan": "hartis:cvi-workflow/step/generate-transects"
+        }
+      ],
+      "parameters": {
+        "spacingMeters": 50,
+        "transectLengthMeters": 400,
+        "maxProcessedCoastlineMeters": 15000,
+        "processingCrs": "EPSG:3857",
+        "outputCrs": "EPSG:4326",
+        "segmentOrderingMethod": "greedy nearest-neighbor stitching"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "id": "hartis:cvi-run-example-001/entity/med-coastal-aois-csv",
+      "type": "prov:Entity",
+      "label": "Mediterranean coastal AOI candidates",
+      "format": "text/csv",
+      "path": "input_data/med_coastal_aois.csv"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/nominatim-bounding-box-response",
+      "type": "prov:Entity",
+      "label": "Nominatim geocoding response used to locate the selected AOI",
+      "format": "application/json",
+      "source": "OpenStreetMap Nominatim"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/overpass-coastline-response",
+      "type": "prov:Entity",
+      "label": "Overpass coastline feature response",
+      "format": "application/json",
+      "source": "OpenStreetMap Overpass API"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/coastline-gpkg",
+      "type": [
+        "prov:Entity",
+        "ospd:VectorDataset"
+      ],
+      "label": "Extracted coastline geometry",
+      "format": "application/geopackage+sqlite3",
+      "path": "output_data/coastline.gpkg",
+      "wasGeneratedBy": "hartis:cvi-run-example-001/activity/extract-coastline"
+    },
+    {
+      "id": "hartis:cvi-run-example-001/entity/transects-geojson",
+      "type": [
+        "prov:Entity",
+        "ospd:VectorDataset"
+      ],
+      "label": "Generated CVI transects",
+      "format": "application/geo+json",
+      "path": "output_data/transects.geojson",
+      "wasGeneratedBy": "hartis:cvi-run-example-001/activity/generate-transects"
+    }
+  ],
+  "status": "illustrative-candidate",
+  "notes": [
+    "The chain represents two linked CVI activities, not a complete CVI run.",
+    "The external geocoding and coastline responses are represented as input entities to make the data-acquisition dependency visible.",
+    "The processType URIs are provisional and are not official Register identifiers.",
+    "The designTime/runtime/entities packaging remains illustrative until the common OSPD serialization is confirmed."
+  ]
+}

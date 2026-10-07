@@ -1,0 +1,63 @@
+- title: CVI transect generation from coastline
+  description: >-
+    A single HARTIS CVI workflow step that generates regularly spaced
+    cross-shore transects from a coastline GeoPackage. This example follows
+    the OSPD-2026 processing-step profile pattern with a provisional
+    processType reference pending the final process-type register.
+  snippets:
+    - language: json
+      code: |
+        {
+          "id": "urn:hartis:ospd2026:cvi:step:generate-transects:example-001",
+          "provType": "Activity",
+          "processType": "https://example.org/ospd/process-types/transect-generation",
+          "label": "Generate cross-shore transects from coastline",
+          "used": [
+            "urn:hartis:ospd2026:cvi:entity:coastline-gpkg"
+          ],
+          "generated": [
+            "urn:hartis:ospd2026:cvi:entity:transects-geojson"
+          ],
+          "qualifiedUsage": [
+            {
+              "entity": "urn:hartis:ospd2026:cvi:entity:coastline-gpkg",
+              "hadRole": "https://example.org/ospd/roles/sourceCoastline"
+            }
+          ],
+          "wasAssociatedWith": [
+            "urn:hartis:software:generate-transects-py",
+            "urn:hartis:container:cvi-workflow-latest"
+          ],
+          "wasInformedBy": [
+            "urn:hartis:ospd2026:cvi:step:extract-coastline"
+          ],
+          "parameters": {
+            "spacingMeters": 50,
+            "transectLengthMeters": 400,
+            "maxProcessedCoastlineMeters": 15000,
+            "processingCrs": "EPSG:3857",
+            "outputCrs": "EPSG:4326",
+            "segmentOrderingMethod": "greedy nearest-neighbor stitching"
+          },
+          "sourceWorkflow": "cvi_workflow.cwl",
+          "sourceCode": "steps/generate_transects.py"
+        }
+
+- title: Minimal HARTIS conforming step
+  description: >-
+    The smallest HARTIS example document that satisfies the processing-step
+    profile shape.
+  snippets:
+    - language: json
+      code: |
+        {
+          "id": "urn:hartis:ospd2026:cvi:step:minimal-001",
+          "provType": "Activity",
+          "processType": "https://example.org/ospd/process-types/transect-generation",
+          "used": [
+            "urn:hartis:ospd2026:cvi:entity:input-001"
+          ],
+          "generated": [
+            "urn:hartis:ospd2026:cvi:entity:output-001"
+          ]
+        }
