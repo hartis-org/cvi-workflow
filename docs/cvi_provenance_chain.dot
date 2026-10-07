@@ -1,0 +1,35 @@
+digraph cvi_provenance_chain {
+  graph [bgcolor="white", rankdir=TB, pad="0.25", nodesep="0.3", ranksep="0.55"];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=11, margin="0.12,0.08", color="#496174", fillcolor="#eef4f7"];
+  edge [fontname="Arial", fontsize=9, color="#496174", arrowsize=0.7];
+
+  inputs [label="Configuration\n+ coastline and source data", fillcolor="#fff4d6", color="#9a7b22"];
+  coastline [label="Extract coastline", fillcolor="#e5f1e8", color="#4c8058"];
+  coastline_out [label="Coastline GeoPackage", shape=note, fillcolor="#f4f7f8"];
+  transects [label="Generate transects", fillcolor="#e5f1e8", color="#4c8058"];
+  transects_out [label="Transects GeoJSON", shape=note, fillcolor="#f4f7f8"];
+  landcover [label="Land-cover analysis", fillcolor="#e8eef8", color="#5575a8"];
+  elevation [label="Elevation analysis", fillcolor="#e8eef8", color="#5575a8"];
+  slope [label="Slope derivation", fillcolor="#e8eef8", color="#5575a8"];
+  erosion [label="Erosion analysis", fillcolor="#e8eef8", color="#5575a8"];
+  indicators [label="Land-cover, elevation,\nslope and erosion outputs", shape=note, fillcolor="#f4f7f8"];
+  cvi [label="Compute CVI", fillcolor="#f8e8e8", color="#9a5555"];
+  result [label="Final CVI GeoJSON result", shape=note, fillcolor="#fff4d6", color="#9a7b22"];
+
+  inputs -> coastline;
+  coastline -> coastline_out;
+  coastline_out -> transects;
+  transects -> transects_out;
+  transects_out -> landcover;
+  transects_out -> elevation;
+  transects_out -> slope;
+  transects_out -> erosion;
+  landcover -> indicators;
+  elevation -> indicators;
+  slope -> indicators;
+  erosion -> indicators;
+  indicators -> cvi;
+  cvi -> result;
+
+  { rank=same; landcover; elevation; slope; erosion; }
+}
