@@ -49,6 +49,11 @@ jobs:
             cvi_workflow.cwl \
             job_cvi.yaml
 
+      - name: Remove credentials from workflow artifact
+        if: always()
+        run: |
+          find ci-artifacts -type f -name 'tokens.env' -print -delete
+
       - name: Upload workflow outputs and provenance
         if: always()
         uses: actions/upload-artifact@v4
