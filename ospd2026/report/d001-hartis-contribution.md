@@ -22,7 +22,7 @@ The main open points are the relationship between a provenance profile, a proces
 
 #### Future Work
 
-HARTIS will refine the normalized CVI provenance chain, compare it with the common provenance patterns used by other participants and complete the validation evidence for the activity, entity and role relationships. The D001 contribution will be finalized with the workflow profiling approach, provenance encoding choice, process-type and Register contribution, validation results and lessons learned. The examples will be updated when the shared provenance profile and Register URI pattern are confirmed.
+As a follow-up after OSPD 2026, HARTIS plans to evaluate the methodology on internal workflow platforms such as HydroStudio and explore its application to a proposed CoastWISE workflow when it becomes available through the EDITO platform.
 
 #### Figure
 
@@ -107,6 +107,8 @@ The current evidence is structural, workflow-based and linked to repository arti
 - the generic activity definitions correspond to operations present in the AI-DGGS FII workflow.
 
 The structural checks pass. Validation against the shared OGC provenance Building Block and final Register identifiers remains part of the next implementation stage; the shared OGC Docker validation toolchain remains pending.
+
+Within OSPD 2026, HARTIS will use the pilot results to refine the normalized CVI provenance chain, align the examples with the agreed shared provenance profile and Register URI pattern, and assess whether the provenance example and process-type definitions are ready for a mature Building Block or Register submission.
 
 A successful GitHub Actions run (`37607636698`) executed the containerised CWL
 workflow end to end. It produced the coastline GeoPackage, transects, the
