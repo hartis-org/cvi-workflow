@@ -3,10 +3,17 @@ name: Build and Publish Docker Image
 on:
   push:
     branches: [ "main" ]
+    # Only build if these specific files change:
+    paths:
+      - 'Dockerfile'
+      - 'requirements.txt'
+      - 'steps/**'
+  workflow_dispatch: # Allows manual trigger
 
 env:
   REGISTRY: ghcr.io
-  # github.repository is "your-username/your-repo-name"
+  # Ensure this is lowercase. Replace with your actual details if needed.
+  # For organization: hartis-org/cvi-workflow
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:

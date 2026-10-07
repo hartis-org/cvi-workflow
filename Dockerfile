@@ -1,19 +1,23 @@
-# Use the geospatial base image (includes Python + GDAL)
+# Use the geospatial base image
 FROM ghcr.io/osgeo/gdal:ubuntu-small-latest
 
-# Set environment variables
+# Environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install pip
-RUN apt-get update && apt-get install -y python3-pip && rm -rf /var/lib/apt/lists/*
+# Install compilers and system dependencies
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    build-essential \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
 
-# Copy requirements and install them
+# Copy requirements and install Python libraries.
 COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --break-system-packages --no-cache-dir --ignore-installed -r requirements.txt
 
-# (Optional) We don't copy the scripts here because CWL injects them.
-# This image serves as the "Runtime Environment".
+# Keep the workflow implementation available in the runtime image.
+COPY steps/ /app/steps/
