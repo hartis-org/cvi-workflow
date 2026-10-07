@@ -22,7 +22,7 @@ The main open points are the relationship between a provenance profile, a proces
 
 #### Future Work
 
-As a follow-up after OSPD 2026, HARTIS plans to evaluate the methodology on internal workflow platforms such as HydroStudio and explore its application to a proposed CoastWISE workflow when it becomes available through the EDITO platform.
+As a follow-up after OSPD 2026, HARTIS plans to evaluate the methodology on internal workflow platforms such as HydroStudio and explore its application to a proposed CoastWISE workflow when it becomes available through the EDITO platform. The aim is to determine whether the same provenance approach can consistently describe processing activities, inputs, outputs, dependencies, execution metadata and process-type references across different workflows and platforms, while remaining understandable, reusable and interoperable.
 
 #### Figure
 
