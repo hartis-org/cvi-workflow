@@ -7,7 +7,8 @@ jobs:
   cvi-run:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -39,6 +40,7 @@ jobs:
           printf 'AWS_DEFAULT_REGION=%s\n' "$CDSE_AWS_DEFAULT_REGION" >> config/tokens.env
 
       - name: Run the CVI workflow and create CWLProv
+        id: run_cvi
         run: |
           mkdir -p ci-artifacts/output ci-artifacts/cwlprov
           cwltool \
@@ -72,6 +74,36 @@ jobs:
           name: ospd2026-cvi-run-${{ github.run_id }}
           path: ci-artifacts/
           if-no-files-found: warn
+
+      - name: Publish sanitized evidence pull request
+        if: steps.run_cvi.outcome == 'success' && steps.sanitize_artifact.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          evidence_dir="ospd2026/evidence/runs/${GITHUB_RUN_ID}"
+          mkdir -p "$evidence_dir"
+          cp ci-artifacts/cwlprov/metadata/provenance/primary.cwlprov.json "$evidence_dir/primary.cwlprov.json"
+          cp ci-artifacts/cwlprov/workflow/primary-output.json "$evidence_dir/primary-output.json"
+          cp ci-artifacts/output/transects_with_cvi_equal.geojson "$evidence_dir/transects_with_cvi_equal.geojson"
+          sha256sum "$evidence_dir"/* > "$evidence_dir/manifest.sha256"
+
+          if grep -RIlE 'AWS_(ACCESS_KEY_ID|SECRET_ACCESS_KEY)=[^[:space:]]+' "$evidence_dir"; then
+            echo 'Credential values found in generated evidence; refusing to publish.'
+            exit 1
+          fi
+
+          branch="generated-evidence/${GITHUB_RUN_ID}"
+          git switch --create "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$evidence_dir"
+          git commit -m "Add sanitized CVI evidence for run ${GITHUB_RUN_ID}"
+          git push --set-upstream origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "Add sanitized CVI evidence for run ${GITHUB_RUN_ID}" \
+            --body "Automated evidence export from successful CVI workflow run ${GITHUB_RUN_ID}. The generated files passed the credential-value check."
 
       - name: Remove temporary credentials
         if: always()

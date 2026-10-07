@@ -8,6 +8,12 @@ The CWL workflow declares `NetworkAccess: true` because the coastline
 extraction step calls the public Nominatim and Overpass services and the
 processing steps may use CDSE services.
 
+After a successful run, the workflow removes temporary files, checks the
+remaining evidence for credential values, and opens a pull request containing
+the selected provenance and CVI output files under
+`ospd2026/evidence/runs/<run-id>/`. It does not commit generated evidence
+directly to `main`.
+
 ## Required repository secrets
 
 Configure these secrets in the GitHub repository before starting the manual
