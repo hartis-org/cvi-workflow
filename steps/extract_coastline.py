@@ -24,6 +24,17 @@ from shapely.geometry import shape
 import random
 
 
+OVERPASS_ENDPOINTS = (
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+)
+OVERPASS_HEADERS = {
+    "User-Agent": "CVI-Workflow/1.0 (https://hartis.org/contact)",
+    "Accept": "application/json",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+}
+
+
 # -------------------------------
 # 1. Query OSM Nominatim
 # -------------------------------
@@ -98,10 +109,22 @@ def query_overpass(bbox):
     way["natural"="coastline"]({bbox['min_lat']},{bbox['min_lon']},{bbox['max_lat']},{bbox['max_lon']});
     out geom;
     """
-    url = "https://overpass-api.de/api/interpreter"
-    r = requests.post(url, data={"data": query}, timeout=60)
-    r.raise_for_status()
-    return r.json()
+    last_error = None
+    for url in OVERPASS_ENDPOINTS:
+        try:
+            response = requests.post(
+                url,
+                data={"data": query},
+                headers=OVERPASS_HEADERS,
+                timeout=90,
+            )
+            response.raise_for_status()
+            return response.json()
+        except requests.RequestException as exc:
+            last_error = exc
+            print(f"⚠️ Overpass endpoint failed ({url}): {exc}")
+
+    raise RuntimeError(f"All Overpass endpoints failed: {last_error}")
 
 
 # -------------------------------
@@ -185,9 +208,7 @@ def main():
         aoi, coastline_gdf = try_get_random_aoi_with_coastline(df)
     except Exception as e:
         print(e)
-        empty = gpd.GeoDataFrame(geometry=[], crs="EPSG:4326")
-        empty.to_file(out_gpkg, layer="coastline", driver="GPKG")
-        sys.exit(0)
+        sys.exit(1)
 
     zoom = calculate_zoom_level(aoi["bounding_box"])
     print("You can reuse zoom level:", zoom)
