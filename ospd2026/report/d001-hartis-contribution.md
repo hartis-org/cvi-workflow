@@ -100,7 +100,15 @@ The current evidence is structural, workflow-based and linked to repository arti
 - the provenance entities correspond to concrete repository files recorded with size and SHA-256 hash;
 - the generic activity definitions correspond to operations present in the AI-DGGS FII workflow.
 
-The structural checks pass. Validation against the shared OGC provenance Building Block and final Register identifiers remains part of the next implementation stage; the the shared OGC Docker validation toolchain remains pending.
+The structural checks pass. Validation against the shared OGC provenance Building Block and final Register identifiers remains part of the next implementation stage; the shared OGC Docker validation toolchain remains pending.
+
+A successful GitHub Actions run (`37607636698`) executed the containerised CWL
+workflow end to end. It produced the coastline GeoPackage, transects, the
+four indicator outputs and the final `transects_with_cvi_equal.geojson` result.
+The run also generated a CWLProv Research Object containing
+`primary.cwlprov.json` and `primary-output.json`. The sanitized evidence
+export passed the credential-value check and is suitable for retaining as a
+reproducibility record.
 
 ### B6. Provenance Encoding
 
