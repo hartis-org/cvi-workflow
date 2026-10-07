@@ -30,6 +30,10 @@ HARTIS will refine the normalized CVI provenance chain, compare it with the comm
 
 Figure: CVI workflow result showing coastal transects and the calculated equal-weight CVI classification.
 
+![CVI workflow provenance chain from inputs through processing activities to the final result](../../docs/cvi_provenance_chain.svg)
+
+Figure: CVI workflow provenance chain from inputs through coastline extraction, transect generation and indicator calculations to the final CVI result.
+
 ## Part B — Contribution Details
 
 ### B1. Contribution Overview
