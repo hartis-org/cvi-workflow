@@ -1,5 +1,5 @@
 digraph cvi_provenance_chain {
-  graph [bgcolor="white", rankdir=LR, pad="0.25", nodesep="0.35", ranksep="0.7"];
+  graph [bgcolor="white", rankdir=TB, pad="0.25", nodesep="0.3", ranksep="0.55"];
   node [shape=box, style="rounded,filled", fontname="Arial", fontsize=11, margin="0.12,0.08", color="#496174", fillcolor="#eef4f7"];
   edge [fontname="Arial", fontsize=9, color="#496174", arrowsize=0.7];
 
@@ -30,4 +30,6 @@ digraph cvi_provenance_chain {
   erosion -> indicators;
   indicators -> cvi;
   cvi -> result;
+
+  { rank=same; landcover; elevation; slope; erosion; }
 }
