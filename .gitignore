@@ -1,5 +1,6 @@
 # Secrets
 .env
+config/tokens.env
 
 # Outputs and Temp files
 cwl_tmp/

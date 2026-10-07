@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "ospd": "https://www.opengis.net/def/ospd/2026/",
+    "hartis": "https://hartis.org/ospd2026/",
+    "id": "@id",
+    "type": "@type",
+    "label": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "definition": "http://www.w3.org/2004/02/skos/core#definition",
+    "broader": "http://www.w3.org/2004/02/skos/core#broader",
+    "used": "prov:used",
+    "generated": "prov:generated"
+  },
+  "@graph": [
+    {
+      "id": "hartis:activity-type/slope-derivation",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "Slope derivation",
+      "definition": "Derive slope values from an elevation or terrain raster."
+    },
+    {
+      "id": "hartis:activity-type/d8-flow-direction-derivation",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "D8 flow-direction derivation",
+      "definition": "Derive raster flow direction using the D8 neighbourhood model."
+    },
+    {
+      "id": "hartis:activity-type/d8-flow-accumulation-derivation",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "D8 flow-accumulation derivation",
+      "definition": "Derive accumulated upstream flow using a D8 flow-direction raster."
+    },
+    {
+      "id": "hartis:activity-type/watershed-delineation",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "Watershed or catchment delineation",
+      "definition": "Delineate a drainage basin or catchment from terrain and flow data."
+    },
+    {
+      "id": "hartis:activity-type/stream-network-extraction",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "Stream-network extraction",
+      "definition": "Extract a stream network from flow accumulation or equivalent hydrologic data."
+    },
+    {
+      "id": "hartis:activity-type/distance-to-feature-calculation",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "Distance-to-feature calculation",
+      "definition": "Calculate distance from raster or vector locations to selected features."
+    },
+    {
+      "id": "hartis:activity-type/zonal-raster-statistics",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "Zonal raster statistics",
+      "definition": "Calculate statistics for raster values within vector or raster zones."
+    },
+    {
+      "id": "hartis:activity-type/raster-sampling-at-points",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "Raster sampling at points",
+      "definition": "Extract raster values at point locations."
+    },
+    {
+      "id": "hartis:activity-type/dggs-cell-indexing",
+      "type": "ospd:GeoprocessingActivity",
+      "label": "DGGS cell indexing",
+      "definition": "Assign spatial inputs or features to identifiers in a DGGS at a specified resolution."
+    },
+    {
+      "id": "hartis:provenance/PRV004",
+      "type": ["prov:Entity", "ospd:ProvenanceDemonstrator"],
+      "label": "AI-DGGS FII pilot result per DGGS cell",
+      "definition": "Demonstrator record showing spatial inputs assigned to DGGS cell identifiers before the Flood Impact Index calculation.",
+      "used": ["hartis:activity-type/dggs-cell-indexing"],
+      "generated": ["hartis:entity/fii-result-per-dggs-cell"]
+    }
+  ]
+}

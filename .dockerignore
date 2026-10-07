@@ -1,0 +1,8 @@
+.git
+.github
+config/tokens.env
+output_data
+ci-artifacts
+__pycache__
+*.pyc
+.DS_Store

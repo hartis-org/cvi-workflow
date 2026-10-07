@@ -1,0 +1,35 @@
+{
+  "id": "urn:hartis:ospd2026:cvi:step:generate-transects:example-001",
+  "provType": "Activity",
+  "processType": "https://example.org/ospd/process-types/transect-generation",
+  "label": "Generate cross-shore transects from coastline",
+  "used": [
+    "urn:hartis:ospd2026:cvi:entity:coastline-gpkg"
+  ],
+  "generated": [
+    "urn:hartis:ospd2026:cvi:entity:transects-geojson"
+  ],
+  "qualifiedUsage": [
+    {
+      "entity": "urn:hartis:ospd2026:cvi:entity:coastline-gpkg",
+      "hadRole": "https://example.org/ospd/roles/sourceCoastline"
+    }
+  ],
+  "wasAssociatedWith": [
+    "urn:hartis:software:generate-transects-py",
+    "urn:hartis:container:cvi-workflow-latest"
+  ],
+  "wasInformedBy": [
+    "urn:hartis:ospd2026:cvi:step:extract-coastline"
+  ],
+  "parameters": {
+    "spacingMeters": 50,
+    "transectLengthMeters": 400,
+    "maxProcessedCoastlineMeters": 15000,
+    "processingCrs": "EPSG:3857",
+    "outputCrs": "EPSG:4326",
+    "segmentOrderingMethod": "greedy nearest-neighbor stitching"
+  },
+  "sourceWorkflow": "cvi_workflow.cwl",
+  "sourceCode": "steps/generate_transects.py"
+}

@@ -1,0 +1,62 @@
+name: Run CVI workflow with Docker and CWLProv
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cvi-run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install cwltool
+        run: python3 -m pip install --upgrade cwltool
+
+      - name: Build the workflow image
+        run: |
+          docker build --tag cvi-workflow:ci .
+          docker tag cvi-workflow:ci ghcr.io/hartis-org/cvi-workflow:latest
+
+      - name: Prepare CDSE credentials for this run
+        env:
+          CDSE_AWS_ACCESS_KEY_ID: ${{ secrets.CDSE_AWS_ACCESS_KEY_ID }}
+          CDSE_AWS_SECRET_ACCESS_KEY: ${{ secrets.CDSE_AWS_SECRET_ACCESS_KEY }}
+          CDSE_AWS_ENDPOINT_URL: ${{ secrets.CDSE_AWS_ENDPOINT_URL }}
+          CDSE_AWS_DEFAULT_REGION: ${{ secrets.CDSE_AWS_DEFAULT_REGION }}
+        run: |
+          test -n "$CDSE_AWS_ACCESS_KEY_ID"
+          test -n "$CDSE_AWS_SECRET_ACCESS_KEY"
+          test -n "$CDSE_AWS_ENDPOINT_URL"
+          test -n "$CDSE_AWS_DEFAULT_REGION"
+          umask 077
+          printf 'AWS_ACCESS_KEY_ID=%s\n' "$CDSE_AWS_ACCESS_KEY_ID" > config/tokens.env
+          printf 'AWS_SECRET_ACCESS_KEY=%s\n' "$CDSE_AWS_SECRET_ACCESS_KEY" >> config/tokens.env
+          printf 'AWS_ENDPOINT_URL=%s\n' "$CDSE_AWS_ENDPOINT_URL" >> config/tokens.env
+          printf 'AWS_DEFAULT_REGION=%s\n' "$CDSE_AWS_DEFAULT_REGION" >> config/tokens.env
+
+      - name: Run the CVI workflow and create CWLProv
+        run: |
+          mkdir -p ci-artifacts/output ci-artifacts/cwlprov
+          cwltool \
+            --provenance "$GITHUB_WORKSPACE/ci-artifacts/cwlprov" \
+            --outdir "$GITHUB_WORKSPACE/ci-artifacts/output" \
+            --tmpdir-prefix "$GITHUB_WORKSPACE/ci-artifacts/tmp-" \
+            --tmp-outdir-prefix "$GITHUB_WORKSPACE/ci-artifacts/out-" \
+            cvi_workflow.cwl \
+            job_cvi.yaml
+
+      - name: Upload workflow outputs and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ospd2026-cvi-run-${{ github.run_id }}
+          path: ci-artifacts/
+          if-no-files-found: error
+
+      - name: Remove temporary credentials
+        if: always()
+        run: rm -f config/tokens.env
