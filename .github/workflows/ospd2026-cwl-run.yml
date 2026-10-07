@@ -50,6 +50,7 @@ jobs:
             job_cvi.yaml
 
       - name: Remove credentials from workflow artifact
+        id: sanitize_artifact
         if: always()
         run: |
           find ci-artifacts -type f -name 'tokens.env' -print -delete
@@ -58,14 +59,14 @@ jobs:
               xargs -0 grep -IlZ 'AWS_SECRET_ACCESS_KEY=' |
               xargs -0r rm -f
           fi
-          find ci-artifacts -type d \( -name 'tmp-*' -o -name 'out-*' \) -prune -exec rm -rf {} +
+          find ci-artifacts \( -type f -o -type d \) \( -name 'tmp-*' -o -name 'out-*' \) -prune -exec rm -rf {} +
           if grep -RIlE 'AWS_(ACCESS_KEY_ID|SECRET_ACCESS_KEY)=[^[:space:]]+' ci-artifacts; then
             echo 'Credential values remain in the artifact; refusing to upload.'
             exit 1
           fi
 
       - name: Upload workflow outputs and provenance
-        if: always()
+        if: always() && steps.sanitize_artifact.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: ospd2026-cvi-run-${{ github.run_id }}
