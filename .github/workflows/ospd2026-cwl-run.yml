@@ -82,9 +82,12 @@ jobs:
         run: |
           evidence_dir="ospd2026/evidence/runs/${GITHUB_RUN_ID}"
           mkdir -p "$evidence_dir"
-          cp ci-artifacts/cwlprov/metadata/provenance/primary.cwlprov.json "$evidence_dir/primary.cwlprov.json"
-          cp ci-artifacts/cwlprov/workflow/primary-output.json "$evidence_dir/primary-output.json"
-          cp ci-artifacts/output/transects_with_cvi_equal.geojson "$evidence_dir/transects_with_cvi_equal.geojson"
+          cp ci-artifacts/cwlprov/metadata/provenance/primary.cwlprov.json \
+            "$evidence_dir/cvi_workflow_run_${GITHUB_RUN_ID}_provenance.json"
+          cp ci-artifacts/cwlprov/workflow/primary-output.json \
+            "$evidence_dir/cvi_workflow_run_${GITHUB_RUN_ID}_outputs.json"
+          cp ci-artifacts/output/transects_with_cvi_equal.geojson \
+            "$evidence_dir/cvi_workflow_run_${GITHUB_RUN_ID}_result.geojson"
           sha256sum "$evidence_dir"/* > "$evidence_dir/manifest.sha256"
 
           if grep -RIlE 'AWS_(ACCESS_KEY_ID|SECRET_ACCESS_KEY)=[^[:space:]]+' "$evidence_dir"; then

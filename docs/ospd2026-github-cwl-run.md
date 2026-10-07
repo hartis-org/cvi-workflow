@@ -11,8 +11,11 @@ processing steps may use CDSE services.
 After a successful run, the workflow removes temporary files, checks the
 remaining evidence for credential values, and opens a pull request containing
 the selected provenance and CVI output files under
-`ospd2026/evidence/runs/<run-id>/`. It does not commit generated evidence
-directly to `main`.
+`ospd2026/evidence/runs/<run-id>/`. The exported files use descriptive names
+such as `cvi_workflow_run_<run-id>_provenance.json` and
+`cvi_workflow_run_<run-id>_result.geojson`; the original CWLProv names remain
+inside the full artifact. It does not commit generated evidence directly to
+`main`.
 
 ## Required repository secrets
 
