@@ -22,7 +22,7 @@ The main open points are the relationship between a provenance profile, a proces
 
 #### Future Work
 
-HARTIS will refine the normalized CVI provenance chain, compare it with the common participant patterns and prepare validation evidence for the activity, entity and role relationships. The first D001 contribution will document the workflow profiling approach, the provenance encoding choice, the process-type and Register contribution, the validation results and the lessons learned. The examples will be updated when the shared provenance profile and Register URI pattern are confirmed.
+HARTIS will refine the normalized CVI provenance chain, compare it with the common provenance patterns used by other participants and complete the validation evidence for the activity, entity and role relationships. The D001 contribution will be finalized with the workflow profiling approach, provenance encoding choice, process-type and Register contribution, validation results and lessons learned. The examples will be updated when the shared provenance profile and Register URI pattern are confirmed.
 
 #### Figure
 
