@@ -14,7 +14,7 @@ Organisation: HARTIS Integrated Nautical Services P.C.
 
 HARTIS is profiling a real Coastal Vulnerability Index (CVI) workflow as a provenance chain of geospatial processing activities. The workflow is a containerised, step-based CWL workflow that uses coastline geometry, transects, land-cover data, elevation data and erosion information to produce coastal vulnerability results. The HARTIS contribution tests a working provenance representation against this workflow and identifies the inputs, outputs, processing activities, parameters and relationships that need to be recorded for reproducible workflow execution.
 
-The workflow source and implementation evidence are available in the [CVI workflow repository](https://github.com/hartis-org/cvi-workflow). The [provenance Building Block source](https://github.com/hartis-org/cvi-workflow/tree/ospd2026-d100/ospd2026/building-block/_sources/hartis-provenance/cvi-workflow) contains the schema, examples, documentation and validation tests.
+The workflow source and implementation evidence are available in the [CVI workflow repository](https://github.com/hartis-org/cvi-workflow). The [provenance Building Block source](https://github.com/hartis-org/cvi-workflow/tree/main/ospd2026/building-block/_sources/hartis-provenance/cvi-workflow) contains the schema, examples, documentation and validation tests.
 
 The focused provenance example describes transect generation from coastline geometry. A two-step chain extends it by connecting coastline extraction to transect generation, including the AOI, Nominatim and Overpass dependencies. A normalized full-workflow candidate separates the workflow definition, eight design-time processing plans, eight runtime activities and the input, intermediate, external and output entities. The contribution also includes provisional generic Geoprocessing Activity definitions derived from the AI-DGGS Flood Impact Index pilot, together with a demonstrator record showing DGGS cell indexing before the FII calculation.
 
@@ -49,12 +49,12 @@ The contribution has two connected evidence tracks:
 
 The repository evidence artefacts include:
 
-- the [CVI workflow definition](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/cvi_workflow.cwl) and [job inputs](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/job_cvi.yaml);
-- the [coastline-to-transects provenance chain](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/provenance/cvi_coastline_to_transects_provenance_chain.json);
-- the [normalised full-workflow provenance candidate](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/provenance/cvi_full_workflow_design_runtime_entities.json), with separate plans, runtime activities and entities;
-- the [HARTIS provenance Building Block source](https://github.com/hartis-org/cvi-workflow/tree/ospd2026-d100/ospd2026/building-block/_sources/hartis-provenance/cvi-workflow), including its schema, example and validation tests;
-- the [Geoprocessing Activity definitions and `PRV004` demonstrator](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/register/geoprocessing-activities.jsonld); and
-- the [artifact manifest](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/validation/cvi_workflow_artifact_manifest.json), with file sizes and SHA-256 hashes.
+- the [CVI workflow definition](https://github.com/hartis-org/cvi-workflow/blob/main/cvi_workflow.cwl) and [job inputs](https://github.com/hartis-org/cvi-workflow/blob/main/job_cvi.yaml);
+- the [coastline-to-transects provenance chain](https://github.com/hartis-org/cvi-workflow/blob/main/ospd2026/provenance/cvi_coastline_to_transects_provenance_chain.json);
+- the [normalised full-workflow provenance candidate](https://github.com/hartis-org/cvi-workflow/blob/main/ospd2026/provenance/cvi_full_workflow_design_runtime_entities.json), with separate plans, runtime activities and entities;
+- the [HARTIS provenance Building Block source](https://github.com/hartis-org/cvi-workflow/tree/main/ospd2026/building-block/_sources/hartis-provenance/cvi-workflow), including its schema, example and validation tests;
+- the [Geoprocessing Activity definitions and `PRV004` demonstrator](https://github.com/hartis-org/cvi-workflow/blob/main/ospd2026/register/geoprocessing-activities.jsonld); and
+- the [artifact manifest](https://github.com/hartis-org/cvi-workflow/blob/main/ospd2026/validation/cvi_workflow_artifact_manifest.json), with file sizes and SHA-256 hashes.
 
 ### B2. Provenance Implementation
 
