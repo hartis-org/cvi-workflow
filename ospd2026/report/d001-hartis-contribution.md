@@ -47,16 +47,12 @@ The contribution has two connected evidence tracks:
 
 The repository evidence artefacts include:
 
-- a CVI processing-step inventory;
-- provisional CVI process-type candidates;
-- a workflow-specific provenance profile for the complete CVI chain;
-- a two-step coastline-to-transects provenance chain;
-- a normalized full-workflow provenance candidate with separate plans, runtime activities and entities;
-- an artifact manifest with file sizes and SHA-256 hashes;
-- a candidate provenance Building Block organised using the OGC
-  Building Blocks template structure;
-- `GA018`-`GA026` provisional activity definitions;
-- `PRV004`, a demonstrator record for assigning spatial inputs to DGGS cell identifiers before the FII calculation.
+- the [CVI workflow definition](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/cvi_workflow.cwl) and [job inputs](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/job_cvi.yaml);
+- the [coastline-to-transects provenance chain](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/provenance/cvi_coastline_to_transects_provenance_chain.json);
+- the [normalised full-workflow provenance candidate](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/provenance/cvi_full_workflow_design_runtime_entities.json), with separate plans, runtime activities and entities;
+- the [HARTIS provenance Building Block source](https://github.com/hartis-org/cvi-workflow/tree/ospd2026-d100/ospd2026/building-block/_sources/hartis-provenance/cvi-workflow), including its schema, example and validation tests;
+- the [Geoprocessing Activity definitions and `PRV004` demonstrator](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/register/geoprocessing-activities.jsonld); and
+- the [artifact manifest](https://github.com/hartis-org/cvi-workflow/blob/ospd2026-d100/ospd2026/validation/cvi_workflow_artifact_manifest.json), with file sizes and SHA-256 hashes.
 
 ### B2. Provenance Implementation
 
@@ -111,13 +107,7 @@ The validation combines structural checks with a real workflow execution. It che
 
 The structural checks pass, and the schema-based provenance Building Block passes the repository validation workflow. Its upstream review is tracked through the shared Open Science Building Blocks pull request. Final Register identifiers remain provisional because the shared URI pattern is still being settled.
 
-A successful GitHub Actions run (`37607636698`) executed the containerised CWL
-workflow end to end. It produced the coastline GeoPackage, transects, the
-four indicator outputs and the final `transects_with_cvi_equal.geojson` result.
-The run also generated a CWLProv Research Object containing
-`primary.cwlprov.json` and `primary-output.json`. The sanitized evidence
-export passed the credential-value check and is suitable for retaining as a
-reproducibility record.
+A [successful GitHub Actions run](https://github.com/hartis-org/cvi-workflow/actions/runs/37607636698) executed the containerised CWL workflow end to end. It produced the coastline GeoPackage, transects, the four indicator outputs and the final `transects_with_cvi_equal.geojson` result. The run also generated a CWLProv Research Object containing `primary.cwlprov.json` and `primary-output.json`. The [sanitized evidence export](https://github.com/hartis-org/cvi-workflow/tree/generated-evidence/37619629660/ospd2026/evidence/runs/37619629660) passed the credential-value check and is suitable for retaining as a reproducibility record.
 
 ### B6. Provenance Encoding
 
