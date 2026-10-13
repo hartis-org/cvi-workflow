@@ -18,7 +18,7 @@ The focused provenance example describes transect generation from coastline geom
 
 #### Challenges
 
-The main challenges were separating reusable provenance structure from application-specific CVI logic, and connecting the design-time workflow description with runtime activities and generated entities. The CVI workflow also contains operations with different levels of generality: slope derivation and raster analysis are reusable GIS activities, while coastline acquisition and final CVI scoring are more dependent on the application. During the pilot, the Register model and URI pattern were still evolving, so the examples used provisional process-type identifiers and kept generic activity definitions separate from application-specific workflow logic.
+The main challenge was describing a real CVI workflow in a way that is useful for this application but can also be reused for other workflows. We therefore had to distinguish general processing steps, such as slope and raster analysis, from application-specific steps, such as coastline acquisition and final CVI scoring. We also had to connect the planned workflow structure with the activities and outputs produced during an actual run. Since the Register model and URI conventions were still being developed during the pilot, we used provisional process-type identifiers and documented these assumptions in the examples.
 
 #### Figure
 
