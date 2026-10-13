@@ -1,0 +1,63 @@
+name: Build HARTIS OSPD-2026 Building Block
+
+on:
+  push:
+    paths:
+      - "ospd2026/building-block/**"
+      - ".github/workflows/ospd2026-building-block.yml"
+  pull_request:
+    paths:
+      - "ospd2026/building-block/**"
+      - ".github/workflows/ospd2026-building-block.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  postprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run OGC Building Blocks postprocessor
+        run: |
+          docker run --pull=always --rm \
+            --workdir /workspace \
+            --user "$(id -u):$(id -g)" \
+            --env HOME=/tmp \
+            -v "$PWD:/workspace" \
+            ghcr.io/opengeospatial/bblocks-postprocess \
+            --clean true \
+            --items-dir ospd2026/building-block/_sources \
+            --config-file ospd2026/building-block/bblocks-config.yaml \
+            --register-file ospd2026/building-block/build-local/register.json \
+            --generated-docs-path ospd2026/building-block/build-local/generateddocs \
+            --annotated-path ospd2026/building-block/build-local/annotated \
+            --test-outputs-path ospd2026/building-block/build-local/tests \
+            --base-url http://localhost:9090/register/ \
+            --fail-on-error true \
+            --skip-permissions true
+
+      - name: Check postprocessor validation report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report_path = Path("ospd2026/building-block/build-local/tests/report.json")
+          report = json.loads(report_path.read_text(encoding="utf-8"))
+          summary = report.get("summary", {})
+          print(json.dumps(summary, indent=2))
+          if summary.get("result") is not True:
+              raise SystemExit("OGC Building Blocks validation report did not pass")
+          PY
+
+      - name: Upload generated Building Blocks report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ospd2026-building-block-build
+          path: ospd2026/building-block/build-local
+          if-no-files-found: warn

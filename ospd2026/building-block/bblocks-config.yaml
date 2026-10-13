@@ -1,0 +1,10 @@
+name: HARTIS OSPD-2026 Building Blocks
+abstract: Building Block candidates for the HARTIS OSPD-2026 workflow profiling contribution.
+description: >-
+  Local development configuration for HARTIS provenance profiles. The
+  candidates are intended for review before any contribution to the shared
+  OGC Open Science Building Blocks repository.
+identifier-prefix: ogc.osc.
+imports:
+  - default
+  - https://ogcincubator.github.io/bblock-prov-schema/build/register.json
