@@ -20,10 +20,6 @@ The first working example describes transect generation from coastline geometry.
 
 The main open points are the relationship between a provenance profile, a process-type Register and a concrete workflow run, and the final form of the process-type identifiers. The CVI workflow also contains operations with different levels of generality: slope derivation and raster analysis are reusable GIS activities, while coastline acquisition and final CVI scoring are more dependent on the application. The current examples therefore keep process-type identifiers provisional and distinguish generic activity definitions from application-specific workflow logic.
 
-#### Future Work
-
-After OSPD 2026, HARTIS plans to assess the methodology across additional, more mature workflow platforms and in the context of European digital-twin infrastructure for coastal and marine applications. The methodology combines workflow profiling, explicit description of processing activities and inputs/outputs, provenance capture, validation evidence and reproducible execution. The aim will be to evaluate its portability, interoperability and reproducibility across different workflows and execution environments.
-
 #### Figure
 
 ![CVI workflow result showing coastal transects and the calculated equal-weight CVI classification](../../docs/cvi_map.jpg)
@@ -33,6 +29,10 @@ Figure: CVI workflow result showing coastal transects and the calculated equal-w
 ![CVI workflow provenance chain from inputs through processing activities to the final result](../../docs/cvi_provenance_chain.svg)
 
 Figure: CVI workflow provenance chain from inputs through coastline extraction, transect generation and indicator calculations to the final CVI result.
+
+#### Future Work
+
+After OSPD 2026, HARTIS plans to assess the methodology across additional, more mature workflow platforms and in the context of European digital-twin infrastructure for coastal and marine applications. The methodology combines workflow profiling, explicit description of processing activities and inputs/outputs, provenance capture, validation evidence and reproducible execution. The aim will be to evaluate its portability, interoperability and reproducibility across different workflows and execution environments.
 
 ## Part B — Contribution Details
 
