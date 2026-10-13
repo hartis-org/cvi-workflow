@@ -40,42 +40,42 @@ After OSPD 2026, HARTIS plans to assess the methodology across additional, more 
 
 The contribution has two connected evidence tracks:
 
-1. The CVI workflow is the primary D100 profiling case. It provides a non-trivial chain of activities and intermediate entities.
-2. The AI-DGGS FII workflow provides additional evidence for generic Geoprocessing Activity definitions that are directly used in a real spatial processing workflow.
+1. The CVI workflow is the primary D100 profiling case. It provides a non-trivial chain of activities, inputs, intermediate entities and final outputs.
+2. The AI-DGGS FII workflow provides additional evidence for generic Geoprocessing Activity definitions that are used in a real spatial processing workflow.
 
-The repository evidence artifacts include:
+The repository evidence artefacts include:
 
 - a CVI processing-step inventory;
 - provisional CVI process-type candidates;
-- a HARTIS workflow-specific provenance profile for the complete CVI chain;
+- a workflow-specific provenance profile for the complete CVI chain;
 - a two-step coastline-to-transects provenance chain;
 - a normalized full-workflow provenance candidate with separate plans, runtime activities and entities;
 - an artifact manifest with file sizes and SHA-256 hashes;
-- a candidate HARTIS provenance Building Block organized using the OGC
+- a candidate provenance Building Block organised using the OGC
   Building Blocks template structure;
 - `GA018`-`GA026` provisional activity definitions;
 - `PRV004`, a demonstrator record for assigning spatial inputs to DGGS cell identifiers before the FII calculation.
 
 ### B2. Provenance Implementation
 
-The current representation models a processing activity with:
+The provenance representation models each processing activity with:
 
 - an activity identifier and label;
 - a provisional `processType` value;
 - `used` input entities;
 - `generated` output entities;
 - `qualifiedUsage` entries for input roles;
-- associations with the workflow script and container;
-- parameters needed to understand or reproduce the operation;
-- links between activities through their generated and used entities.
+- links to the workflow script and container;
+- parameters needed to understand or reproduce the operation; and
+- links to other activities through the entities they use and generate.
 
-The first focused example is `generate-transects`. It consumes `coastline.gpkg`, produces `transects.geojson`, and records parameters such as spacing, transect length, processing CRS and output CRS. The two-step chain adds `extract-coastline` and keeps the AOI, Nominatim and Overpass responses visible as upstream entities. The HARTIS Building Block candidate extends the same pattern across the eight CVI steps and separates the workflow definition, design-time plans, runtime activities and entities.
+The focused `generate-transects` example consumes `coastline.gpkg` and produces `transects.geojson`. It records parameters such as transect spacing, transect length, processing CRS and output CRS, so the example describes more than just the existence of an output file. The two-step chain adds `extract-coastline` and keeps the AOI, Nominatim response and Overpass response visible as upstream entities. The provenance Building Block candidate extends this pattern across the eight CVI steps and separates the workflow definition, design-time plans, runtime activities and data entities.
 
 ### B3. Process Types and Register Contribution
 
-The CVI workflow produced candidate terms including configuration validation, coastline data acquisition, transect generation, land-cover analysis, slope derivation, erosion-data integration, elevation analysis and vulnerability-index scoring. These remain provisional until the Register model and URI pattern are settled.
+The CVI workflow produced candidate terms for configuration validation, coastline data acquisition, transect generation, land-cover analysis, slope derivation, erosion-data integration, elevation analysis and vulnerability-index scoring. These terms are kept provisional while the shared Register model and URI conventions are being established.
 
-The AI-DGGS FII pilot supplied additional generic activity definitions based on operations actually performed by the workflow:
+The AI-DGGS FII pilot supplied additional generic activity definitions based on operations actually performed by that workflow:
 
 - `GA018` Slope derivation;
 - `GA019` D8 flow-direction derivation;
@@ -87,15 +87,15 @@ The AI-DGGS FII pilot supplied additional generic activity definitions based on 
 - `GA025` Raster sampling at points;
 - `GA026` DGGS cell indexing.
 
-These definitions are intentionally separate from the application-specific FII score. `PRV004` demonstrates the use of `DGGS cell indexing`: spatial inputs and a grid resolution are used to produce DGGS cell identifiers, which are then used by the subsequent FII calculation.
+These definitions are intentionally separate from the application-specific FII score. The `PRV004` demonstrator shows how spatial inputs and a grid resolution are used to produce DGGS cell identifiers for the subsequent FII calculation.
 
 ### B4. Register Implementation
 
-HARTIS is contributing definitions and usage evidence as a participant rather than implementing the Register. The entries are kept provisional and are intended to follow the shared Register and Building Block conventions once the final intake and URI patterns are available.
+The contribution provides candidate definitions and usage evidence for the Register; it does not implement the Register itself. The entries are provisional and are intended to follow the shared Register and Building Block conventions as the intake process and URI patterns are finalised.
 
 ### B5. Validation Evidence
 
-The current evidence is structural, workflow-based and linked to repository artifacts. It checks that:
+The validation combines structural checks with a real workflow execution. It checks that:
 
 - each activity has identifiable inputs and outputs;
 - intermediate entities connect one processing step to the next;
@@ -104,10 +104,10 @@ The current evidence is structural, workflow-based and linked to repository arti
 - the full CVI candidate contains eight plans and eight runtime activities;
 - every runtime activity references a design-time plan;
 - the final CVI activity consumes the four indicator outputs;
-- the provenance entities correspond to concrete repository files recorded with size and SHA-256 hash;
+- the provenance entities correspond to concrete repository files recorded with their size and SHA-256 hash; and
 - the generic activity definitions correspond to operations present in the AI-DGGS FII workflow.
 
-The structural checks pass. The schema-based provenance Building Block passes the repository validation workflow; its upstream review is tracked through the shared Open Science Building Blocks pull request. Final Register identifiers remain provisional because the shared URI pattern is still being settled.
+The structural checks pass, and the schema-based provenance Building Block passes the repository validation workflow. Its upstream review is tracked through the shared Open Science Building Blocks pull request. Final Register identifiers remain provisional because the shared URI pattern is still being settled.
 
 A successful GitHub Actions run (`37607636698`) executed the containerised CWL
 workflow end to end. It produced the coastline GeoPackage, transects, the
@@ -119,11 +119,11 @@ reproducibility record.
 
 ### B6. Provenance Encoding
 
-The working examples use a JSON/JSON-LD-oriented representation with explicit identifiers, types, activities, entities and relationships. The focused evidence demonstrates a two-step chain, while the HARTIS Building Block candidate represents the complete CVI workflow and separates workflow definition, design-time plans, runtime activities and entities. This format is a working profile candidate and will be compared with the common OSPD provenance profile and any required Building Block transforms.
+The examples use a JSON/JSON-LD-oriented representation with explicit identifiers, types, activities, entities and relationships. The focused evidence demonstrates a two-step chain, while the provenance Building Block candidate represents the complete CVI workflow and separates the workflow definition, design-time plans, runtime activities and data entities. This provides a concrete profile for the CVI case while leaving room to align with the common OSPD provenance profile and any required Building Block transformations.
 
 ### B7. Findings And Lessons Learned
 
-The CVI workflow shows that a useful provenance profile must distinguish the reusable processing operation from the application-specific scoring logic. It must also preserve the relationship between an activity definition, a concrete runtime activity, its input entities, its generated entities and the software/container that executed it.
+The CVI workflow shows that a useful provenance profile must distinguish a reusable processing operation from application-specific scoring logic. It must also preserve the relationship between an activity definition, the runtime activity that implements it, its input and output entities, and the software or container that executed it.
 
 The FII workflow shows that generic activity definitions are strongest when they are derived from real operations such as D8 processing, zonal statistics and DGGS indexing, rather than invented only for the Register.
 
@@ -131,8 +131,8 @@ The FII workflow shows that generic activity definitions are strongest when they
 
 - Keep generic activity definitions separate from application-specific index calculations.
 - Allow a workflow profile to link a runtime activity to a registered or provisional process type.
-- Keep the provenance representation able to describe both a single processing step and a connected workflow chain.
-- Provide clear validation feedback for activity, entity and qualified-usage structures.
+- Support both a single processing step and a connected workflow chain.
+- Provide clear validation feedback for activities, entities and qualified-usage structures.
 
 ### B9. References
 
