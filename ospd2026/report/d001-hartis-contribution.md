@@ -38,6 +38,8 @@ After OSPD 2026, HARTIS plans to assess the methodology across additional, more 
 
 ### B1. Contribution Overview
 
+This contribution combines a primary workflow-profiling case with a supporting activity-definition case. Together, they show both how provenance can be captured for a complete geospatial workflow and how reusable processing types can be derived from a real application.
+
 The contribution has two connected evidence tracks:
 
 1. The CVI workflow is the primary D100 profiling case. It provides a non-trivial chain of activities, inputs, intermediate entities and final outputs.
