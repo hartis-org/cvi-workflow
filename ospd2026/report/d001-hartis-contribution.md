@@ -1,6 +1,6 @@
 # HARTIS D001 Contribution Draft
 
-Status: working draft, updated with provenance-chain evidence on 2026-10-07
+Status: final contribution draft, updated on 2026-10-13; pending only external review updates
 Role: D100 Workflow Profiler
 Organisation: HARTIS Integrated Nautical Services P.C.
 
@@ -20,9 +20,9 @@ The first working example describes transect generation from coastline geometry.
 
 The main open points are the relationship between a provenance profile, a process-type Register and a concrete workflow run, and the final form of the process-type identifiers. The CVI workflow also contains operations with different levels of generality: slope derivation and raster analysis are reusable GIS activities, while coastline acquisition and final CVI scoring are more dependent on the application. The current examples therefore keep process-type identifiers provisional and distinguish generic activity definitions from application-specific workflow logic.
 
-#### Future Work
+#### Contribution Status
 
-After OSPD 2026, HARTIS plans to assess the methodology across additional, more mature workflow platforms and in the context of European digital-twin infrastructure for coastal and marine applications. The methodology combines workflow profiling, explicit description of processing activities and inputs/outputs, provenance capture, validation evidence and reproducible execution. The aim will be to evaluate its portability, interoperability and reproducibility across different workflows and execution environments.
+The D001 contribution now includes the workflow profiling approach, the provenance encoding choice, the process-type and Register contribution, the validation results, the reproducible execution evidence and the lessons learned. The normalized CVI provenance chain and the schema-based provenance Building Block have been validated locally and submitted for wider review. Remaining updates are limited to incorporating review feedback and replacing provisional process-type or Register URI references if the shared OSPD-2026 conventions change before final report integration.
 
 #### Figure
 
@@ -107,9 +107,7 @@ The current evidence is structural, workflow-based and linked to repository arti
 - the provenance entities correspond to concrete repository files recorded with size and SHA-256 hash;
 - the generic activity definitions correspond to operations present in the AI-DGGS FII workflow.
 
-The structural checks pass. Validation against the shared OGC provenance Building Block and final Register identifiers remains part of the next implementation stage; the shared OGC Docker validation toolchain remains pending.
-
-Within OSPD 2026, HARTIS will use the pilot results to refine the normalized CVI provenance chain, align the examples with the agreed shared provenance profile and Register URI pattern, and assess whether the provenance example and process-type definitions are ready for a mature Building Block or Register submission.
+The structural checks pass. The schema-based provenance Building Block passes the repository validation workflow; its upstream review is tracked through the shared Open Science Building Blocks pull request. Final Register identifiers remain provisional because the shared URI pattern is still being settled.
 
 A successful GitHub Actions run (`37607636698`) executed the containerised CWL
 workflow end to end. It produced the coastline GeoPackage, transects, the
