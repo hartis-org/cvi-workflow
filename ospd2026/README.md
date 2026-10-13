@@ -9,8 +9,11 @@ evidence that profiles that workflow.
 
 - `provenance/` contains a focused coastline-to-transects chain and the
   normalized full-workflow design/runtime example.
-- `building-block/prov-processing-step/` contains the current working candidate
-  for a single geospatial processing-step provenance profile.
+- `building-block/_sources/hartis-provenance/cvi-workflow/` contains the
+  HARTIS workflow-specific provenance Building Block candidate for the complete
+  CVI workflow.
+- `building-block/bblocks-config.yaml` provides the local Building Blocks
+  collection configuration and shared provenance import.
 - `register/geoprocessing-activities.jsonld` contains provisional HARTIS
   activity definitions derived from the AI-DGGS FII evidence workflow and the
   `PRV004` demonstrator record.
@@ -30,7 +33,8 @@ and outputs, and the evidence needed to review the provenance profile.
 
 The process-type identifiers in the register file are provisional. They are
 not presented as official Register terms until the OSPD Register process is
-confirmed.
+confirmed. The HARTIS provenance profile is also a local under-development
+candidate and is not yet an official OGC Building Block.
 
 ## Reproduction
 

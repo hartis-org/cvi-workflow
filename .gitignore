@@ -6,6 +6,7 @@ config/tokens.env
 cwl_tmp/
 archive/
 *.log
+ospd2026/building-block/build-local/
 
 # Python & Jupyter
 __pycache__/

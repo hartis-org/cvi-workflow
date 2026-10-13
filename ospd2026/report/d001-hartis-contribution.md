@@ -47,11 +47,12 @@ The repository evidence artifacts include:
 
 - a CVI processing-step inventory;
 - provisional CVI process-type candidates;
-- a single-step transect-generation provenance example;
+- a HARTIS workflow-specific provenance profile for the complete CVI chain;
 - a two-step coastline-to-transects provenance chain;
 - a normalized full-workflow provenance candidate with separate plans, runtime activities and entities;
 - an artifact manifest with file sizes and SHA-256 hashes;
-- a processing-step Building Block implementation draft;
+- a candidate HARTIS provenance Building Block organized using the OGC
+  Building Blocks template structure;
 - `GA018`-`GA026` provisional activity definitions;
 - `PRV004`, a demonstrator record for assigning spatial inputs to DGGS cell identifiers before the FII calculation.
 
@@ -68,7 +69,7 @@ The current representation models a processing activity with:
 - parameters needed to understand or reproduce the operation;
 - links between activities through their generated and used entities.
 
-The first focused example is `generate-transects`. It consumes `coastline.gpkg`, produces `transects.geojson`, and records parameters such as spacing, transect length, processing CRS and output CRS. The two-step chain adds `extract-coastline` and keeps the AOI, Nominatim and Overpass responses visible as upstream entities. The normalized full candidate extends the same pattern across the eight CVI steps and separates the workflow definition, design-time plans, runtime activities and entities.
+The first focused example is `generate-transects`. It consumes `coastline.gpkg`, produces `transects.geojson`, and records parameters such as spacing, transect length, processing CRS and output CRS. The two-step chain adds `extract-coastline` and keeps the AOI, Nominatim and Overpass responses visible as upstream entities. The HARTIS Building Block candidate extends the same pattern across the eight CVI steps and separates the workflow definition, design-time plans, runtime activities and entities.
 
 ### B3. Process Types and Register Contribution
 
@@ -120,7 +121,7 @@ reproducibility record.
 
 ### B6. Provenance Encoding
 
-The working examples use a JSON/JSON-LD-oriented representation with explicit identifiers, types, activities, entities and relationships. The focused examples demonstrate a single step and a two-step chain. The normalized full candidate additionally separates workflow definition, design-time plans, runtime activities and entities. This format is convenient for documenting a compact processing step and for extending the example to a connected workflow chain, but it remains a working choice and will be compared with the common OSPD provenance profile and any required Building Block transforms.
+The working examples use a JSON/JSON-LD-oriented representation with explicit identifiers, types, activities, entities and relationships. The focused evidence demonstrates a two-step chain, while the HARTIS Building Block candidate represents the complete CVI workflow and separates workflow definition, design-time plans, runtime activities and entities. This format is a working profile candidate and will be compared with the common OSPD provenance profile and any required Building Block transforms.
 
 ### B7. Findings And Lessons Learned
 
@@ -138,10 +139,9 @@ The FII workflow shows that generic activity definitions are strongest when they
 ### B9. References
 
 - HARTIS CVI workflow definition and execution inputs: [`cvi_workflow.cwl`](../../cvi_workflow.cwl) and [`job_cvi.yaml`](../../job_cvi.yaml).
-- HARTIS single-step provenance example: [`cvi_transect_generation_step.json`](../building-block/prov-processing-step/examples/cvi_transect_generation_step.json).
 - HARTIS coastline-to-transects provenance chain: [`cvi_coastline_to_transects_provenance_chain.json`](../provenance/cvi_coastline_to_transects_provenance_chain.json).
 - HARTIS normalized full-workflow provenance candidate: [`cvi_full_workflow_design_runtime_entities.json`](../provenance/cvi_full_workflow_design_runtime_entities.json).
-- HARTIS processing-step Building Block draft: [`bblock.json`](../building-block/prov-processing-step/bblock.json), [`schema.yaml`](../building-block/prov-processing-step/schema.yaml) and [`examples.yaml`](../building-block/prov-processing-step/examples.yaml).
+- HARTIS full-workflow provenance Building Block candidate: [`bblock.json`](../building-block/_sources/hartis-provenance/cvi-workflow/bblock.json), [`schema.yaml`](../building-block/_sources/hartis-provenance/cvi-workflow/schema.yaml), [`examples.yaml`](../building-block/_sources/hartis-provenance/cvi-workflow/examples.yaml) and [`example.json`](../building-block/_sources/hartis-provenance/cvi-workflow/example.json).
 - HARTIS activity definitions and `PRV004` demonstrator record: [`geoprocessing-activities.jsonld`](../register/geoprocessing-activities.jsonld).
 - HARTIS artifact manifest with file sizes and SHA-256 checksums: [`cvi_workflow_artifact_manifest.json`](../validation/cvi_workflow_artifact_manifest.json).
 - W3C PROV-O: https://www.w3.org/TR/prov-o/.
