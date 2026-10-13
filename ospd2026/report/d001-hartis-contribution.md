@@ -20,9 +20,9 @@ The first working example describes transect generation from coastline geometry.
 
 The main open points are the relationship between a provenance profile, a process-type Register and a concrete workflow run, and the final form of the process-type identifiers. The CVI workflow also contains operations with different levels of generality: slope derivation and raster analysis are reusable GIS activities, while coastline acquisition and final CVI scoring are more dependent on the application. The current examples therefore keep process-type identifiers provisional and distinguish generic activity definitions from application-specific workflow logic.
 
-#### Contribution Status
+#### Future Work
 
-The D001 contribution now includes the workflow profiling approach, the provenance encoding choice, the process-type and Register contribution, the validation results, the reproducible execution evidence and the lessons learned. The normalized CVI provenance chain and the schema-based provenance Building Block have been validated locally and submitted for wider review. Remaining updates are limited to incorporating review feedback and replacing provisional process-type or Register URI references if the shared OSPD-2026 conventions change before final report integration.
+After OSPD 2026, HARTIS plans to assess the methodology across additional, more mature workflow platforms and in the context of European digital-twin infrastructure for coastal and marine applications. The methodology combines workflow profiling, explicit description of processing activities and inputs/outputs, provenance capture, validation evidence and reproducible execution. The aim will be to evaluate its portability, interoperability and reproducibility across different workflows and execution environments.
 
 #### Figure
 
