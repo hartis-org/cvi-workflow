@@ -1,6 +1,6 @@
 # HARTIS D001 Contribution Draft
 
-Status: final contribution draft, updated on 2026-10-13; pending only external review updates
+Status: final contribution draft, updated on 2026-10-21; Building Block contribution accepted upstream
 Role: D100 Workflow Profiler
 Organisation: HARTIS Integrated Nautical Services P.C.
 
@@ -107,7 +107,7 @@ The validation combines structural checks with a real workflow execution. It che
 - the provenance entities correspond to concrete repository files recorded with their size and SHA-256 hash; and
 - the generic activity definitions correspond to operations present in the AI-DGGS FII workflow.
 
-The structural checks pass, and the schema-based provenance Building Block passes the repository validation workflow. Its upstream review is tracked through the shared Open Science Building Blocks pull request. Final Register identifiers remain provisional because the shared URI pattern is still being settled.
+The structural checks pass, and the schema-based provenance Building Block passes the repository validation workflow. The contribution was also accepted upstream through the shared Open Science Building Blocks pull request. Final Register identifiers remain provisional because the shared URI pattern is still being settled.
 
 A [successful GitHub Actions run](https://github.com/hartis-org/cvi-workflow/actions/runs/37607636698) executed the containerised CWL workflow end to end. It produced the coastline GeoPackage, transects, the four indicator outputs and the final `transects_with_cvi_equal.geojson` result. The run also generated a CWLProv Research Object containing `primary.cwlprov.json` and `primary-output.json`. The [sanitized evidence export](https://github.com/hartis-org/cvi-workflow/tree/generated-evidence/37619629660/ospd2026/evidence/runs/37619629660) passed the credential-value check and is suitable for retaining as a reproducibility record.
 
